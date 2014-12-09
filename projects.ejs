@@ -1,0 +1,49 @@
+<div class="row">
+	
+	<div class="large-8 columns large-pull-right">
+
+		<ul class="breadcrumbs">
+			<li><a href="/">Home</a></li>
+
+			<% if(current.source !== "index") { %>
+				<li class="current"><a href="/projects">Projects</a></li>
+			<% } %>
+		</ul>
+
+		<h4>Latest Projects</h4>
+
+		<% for(var slug in public.articles._data){ %>
+
+			<% if(public.articles._data[slug].publish !== true) { continue; } %>
+			<% if(public.articles._data[slug].tags.indexOf("projects") === -1) { continue; } %>
+
+			<div class="row blog_header">
+				<div class="large-6 columns">
+					<h5><a href="/articles/<%= slug %>">
+							<%= public.articles._data[slug].title %>
+					</a></h5>
+				</div>
+				<div class="large-6 columns text-right">
+					<span><%= public.articles._data[slug].date %></span>
+				</div>
+			</div>
+
+			<p>
+				<%- partial('articles/'+slug) %>
+			</p>
+
+			<a href="#" class="button small">Readmore</a>
+
+			<hr>
+
+		<% }; %>
+
+	</div>
+
+	<div class="large-4 columns">
+		<%- partial("partials/_projects_sidebar") %>
+	</div>
+	
+</div>
+
+

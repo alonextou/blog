@@ -1,0 +1,411 @@
+<!doctype html>
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Alex Crawford</title>
+		<link rel="stylesheet" href="/css/app.css" />
+		<link rel="stylesheet" href="/css/override.css" />
+		<link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="/bower_components/slick.js/slick/slick.css" />
+	    <script src="/bower_components/foundation/js/vendor/modernizr.js"></script>
+	</head>
+	<body>
+		<nav id="topnav" class="top-bar" data-topbar role="navigation">
+			<ul class="title-area">
+				<li class="name">
+					<h1><a href="/">Alex Crawford</a></h1>
+				</li>
+				<li class="toggle-topbar menu-icon">
+					<a href="#"><span>Menu</span></a>
+				</li>
+			</ul>
+
+			<section class="top-bar-section">
+
+				<ul class="right contact_icons hide-for-small">
+					<li>
+						<a href="#"><i class="fa fa-twitter fa-2x"></i></a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-github fa-2x"></i></a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-steam fa-2x fa-spin"></i></a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-linkedin fa-2x"></i></a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-facebook fa-2x"></i></a>
+					</li>
+				</ul>
+
+				<ul class="left">
+					<li class="">
+						<a href="/blog">Blog</a>
+					</li>
+					<li class="">
+						<a href="/projects">Projects</a>
+					</li>
+				</ul>
+
+				<ul class="right mobile_contact_icons show-for-small">
+					<div class="icon-bar five-up">
+						<a href="#" class="item"><i class="fa fa-twitter fa-2x"></i></a>
+						<a href="#" class="item"><i class="fa fa-github fa-2x"></i></a>
+						<a href="#" class="item"><i class="fa fa-steam fa-2x fa-spin"></i></a>
+						<a href="#" class="item"><i class="fa fa-linkedin fa-2x"></i></a>
+						<a href="#" class="item"><i class="fa fa-facebook fa-2x"></i></a>
+					</div>
+				</ul>
+
+			</section>
+		</nav>
+
+		<div id="page">
+			
+			
+				<div id="home_header">
+	<div class="row">
+
+		<div class="medium-2 small-4 columns left">
+			<img src="/img/me.png">
+			<hr>
+		</div>
+
+		<div class="medium-4 small-8 columns right">
+			<ul class="side-nav">
+				<li>
+					<a href="#">
+						<i class="icon-phone"></i>321-759-5293
+					</a>
+				</li>
+				<li>
+					<a href="mailto:awc737@gmail.com">
+						<i class="icon-envelope"></i>Contact Me
+					</a>
+				</li>
+				<li>
+					<a href="{{ URL::to('files/alexcrawford-resume-2013.pdf') }}" target="_blank">
+						<i class="icon-cloud"></i>Download my Resume
+					</a>
+				</li>
+			</ul>
+		</div>
+
+		<div id="who_i_am" class="medium-6 small-12 columns">
+			<div id="who_i_am_slider">
+				<div>
+					<h5>Web / Application Developer</h5>
+				</div>
+				<div>
+					<h5>DevOps Engineer</h5>
+				</div>
+			</div>
+			<p>I am a problem solver and a leader. I seek challenges that require me to overcome obstacles and implement better solutions. I am passionate about my work and rapidly evolving technology. <a href="#why-hire-me">Why hire me?</a></p>
+		</div>
+		<!--
+		<div>
+			<h5>DevOps Systems Administrator</h5>
+			<p>When I was twelve, I converted my family to Linux with a demo of Knoppix. From RHEL to Debian, to Windows and beyond (hyperscale enterprise clouds), I write and maintain software that automates with hardware.</p>
+		</div>
+		-->
+
+	</div>
+</div>
+
+<div class="row">
+	<div class="medium-8 columns">
+		<h5 class="header">My Recent Projects</h5>
+
+		<!-- slider on small -->
+
+		<div id="recent_projects_slider" class="show-for-medium-down">
+			
+				
+				
+				
+				
+				
+				<div class="small-4 columns project_link" data-reveal-id="modal-justmakegames">
+					<ul class="grid cs-style-6">
+					    <li>
+					        <div class="figure">
+					            <img src="img/projects/jmg.png" title="Just Make Games">
+					            <div class="figcaption">
+					                <span>Just Make Games</span>
+					            </div>
+					        </div>
+					    </li>
+					</ul>
+				</div>
+			
+				
+				
+				
+				<div class="small-4 columns project_link" data-reveal-id="modal-cagehost">
+					<ul class="grid cs-style-6">
+					    <li>
+					        <div class="figure">
+					            <img src="img/projects/cagehost.png" title="CageHost">
+					            <div class="figcaption">
+					                <span>CageHost</span>
+					            </div>
+					        </div>
+					    </li>
+					</ul>
+				</div>
+			
+				
+				
+				
+				<div class="small-4 columns project_link" data-reveal-id="modal-jeld-wen">
+					<ul class="grid cs-style-6">
+					    <li>
+					        <div class="figure">
+					            <img src="img/projects/jeld-wen.png" title="JELD-WEN">
+					            <div class="figcaption">
+					                <span>JELD-WEN</span>
+					            </div>
+					        </div>
+					    </li>
+					</ul>
+				</div>
+			
+				
+				
+				
+				<div class="small-4 columns project_link" data-reveal-id="modal-fbignite">
+					<ul class="grid cs-style-6">
+					    <li>
+					        <div class="figure">
+					            <img src="img/projects/fbignite.png" title="Facebook Ignite">
+					            <div class="figcaption">
+					                <span>Facebook Ignite</span>
+					            </div>
+					        </div>
+					    </li>
+					</ul>
+				</div>
+			
+				
+				
+				
+				<div class="small-4 columns project_link" data-reveal-id="modal-eternopia">
+					<ul class="grid cs-style-6">
+					    <li>
+					        <div class="figure">
+					            <img src="img/projects/eternopia.png" title="Eternopia">
+					            <div class="figcaption">
+					                <span>Eternopia</span>
+					            </div>
+					        </div>
+					    </li>
+					</ul>
+				</div>
+			
+				
+				
+				
+				<div class="small-4 columns project_link" data-reveal-id="modal-harp-blog">
+					<ul class="grid cs-style-6">
+					    <li>
+					        <div class="figure">
+					            <img src="img/projects/paper.png" title="My Harp Blog">
+					            <div class="figcaption">
+					                <span>My Harp Blog</span>
+					            </div>
+					        </div>
+					    </li>
+					</ul>
+				</div>
+			
+		</div>
+
+		<div id="recent_projects" class="row hide-for-medium-down">
+			
+				
+				
+				
+				
+				<div class="medium-6 large-4 columns project_link" data-reveal-id="modal-justmakegames">
+					<ul class="grid cs-style-6">
+					    <li>
+					        <div class="figure">
+					            <img src="img/projects/jmg.png" title="Just Make Games">
+					            <div class="figcaption">
+					                <span>Just Make Games</span>
+					            </div>
+					        </div>
+					    </li>
+					</ul>
+				</div>
+				<div id="modal-justmakegames" class="reveal-modal" data-reveal>
+					<h3>Just Make Games</h3>
+					<a class="close-reveal-modal">&#215;</a>
+				</div>
+			
+				
+				
+				<div class="medium-6 large-4 columns project_link" data-reveal-id="modal-cagehost">
+					<ul class="grid cs-style-6">
+					    <li>
+					        <div class="figure">
+					            <img src="img/projects/cagehost.png" title="CageHost">
+					            <div class="figcaption">
+					                <span>CageHost</span>
+					            </div>
+					        </div>
+					    </li>
+					</ul>
+				</div>
+				<div id="modal-cagehost" class="reveal-modal" data-reveal>
+					<h3>CageHost</h3>
+					<a class="close-reveal-modal">&#215;</a>
+				</div>
+			
+				
+				
+				<div class="medium-6 large-4 columns project_link" data-reveal-id="modal-jeld-wen">
+					<ul class="grid cs-style-6">
+					    <li>
+					        <div class="figure">
+					            <img src="img/projects/jeld-wen.png" title="JELD-WEN">
+					            <div class="figcaption">
+					                <span>JELD-WEN</span>
+					            </div>
+					        </div>
+					    </li>
+					</ul>
+				</div>
+				<div id="modal-jeld-wen" class="reveal-modal" data-reveal>
+					<h3>JELD-WEN</h3>
+					<a class="close-reveal-modal">&#215;</a>
+				</div>
+			
+				
+				
+				<div class="medium-6 large-4 columns project_link" data-reveal-id="modal-fbignite">
+					<ul class="grid cs-style-6">
+					    <li>
+					        <div class="figure">
+					            <img src="img/projects/fbignite.png" title="Facebook Ignite">
+					            <div class="figcaption">
+					                <span>Facebook Ignite</span>
+					            </div>
+					        </div>
+					    </li>
+					</ul>
+				</div>
+				<div id="modal-fbignite" class="reveal-modal" data-reveal>
+					<h3>Facebook Ignite</h3>
+					<a class="close-reveal-modal">&#215;</a>
+				</div>
+			
+				
+				
+				<div class="medium-6 large-4 columns project_link" data-reveal-id="modal-eternopia">
+					<ul class="grid cs-style-6">
+					    <li>
+					        <div class="figure">
+					            <img src="img/projects/eternopia.png" title="Eternopia">
+					            <div class="figcaption">
+					                <span>Eternopia</span>
+					            </div>
+					        </div>
+					    </li>
+					</ul>
+				</div>
+				<div id="modal-eternopia" class="reveal-modal" data-reveal>
+					<h3>Eternopia</h3>
+					<a class="close-reveal-modal">&#215;</a>
+				</div>
+			
+				
+				
+				<div class="medium-6 large-4 columns project_link" data-reveal-id="modal-harp-blog">
+					<ul class="grid cs-style-6">
+					    <li>
+					        <div class="figure">
+					            <img src="img/projects/paper.png" title="My Harp Blog">
+					            <div class="figcaption">
+					                <span>My Harp Blog</span>
+					            </div>
+					        </div>
+					    </li>
+					</ul>
+				</div>
+				<div id="modal-harp-blog" class="reveal-modal" data-reveal>
+					<h3>My Harp Blog</h3>
+					<a class="close-reveal-modal">&#215;</a>
+				</div>
+			
+		</div>
+
+		<h5 id="why-hire-me" class="header">Why Hire Me?</h5>
+		<p>I live in Portlandia, have a high-cut combover, a mustache and black thick rimmed glasses. <br class="hide-for-medium-down">If that's not enough, I like running, biking and craft beer, sometimes in conjuction! <!--No, I  am not willing to cut my mohawk blue, but I would die it blue if <span>Intel</span> hires me.-->
+		</p><p>
+		I operate a web hosting platform, a software development company, a game development social network and a competitive gaming league. I've curated and automated these projects for years, to the point of being self-sufficient thus promoting my pursuit of further endeavors.
+		</p>
+	</div>
+
+	<div class="medium-4 columns">
+		<h5 class="header">My Buzzwords</h5>
+		<p>
+			HTML, CSS, Javascript,
+			Mobile applications, Responsive design,
+			Server management, Architecture, DevOps,
+			Linux, Debian, KVM, Docker, Git, 
+			Chef, Puppet, Vagrant, NGINX, Apache,
+			PHP, C#, Java, Ruby, Python,
+			SQL, MySQL, PostgreSQL,
+			NoSQL, MongoDB, RethinkDB,
+			Redis, Memcached, SOLR, ElasticSearch,
+			Laravel, Joomla, Drupal, Symfony,
+			NodeJS, Meteor, Angular, Ember,
+			EJS, Jade, SASS, Less, Grunt, Capistrano
+		</p>
+		<hr>
+		<a class="twitter-timeline" href="https://twitter.com/awc737" data-widget-id="388016044029124608">Tweets by @awc737</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	</div>
+
+</div>
+			
+
+		</div>
+
+		<div id="footer">
+			<div class="row">
+				<div id="built_with_title" class="medium-8 columns text-right hide-for-small">
+					This site is proudly built using:
+				</div>
+				<div id="built_with_title_small" class="large-12 columns text-right show-for-small">
+					This site is proudly built using:
+				</div>
+				<div id="built_with" class="medium-4 columns pull-right">
+					<div class="icon-bar four-up">
+						<a href="http://harpjs.com/" target="_blank" class="item has-tip tip-top" data-tooltip aria-haspopup="true" title="Harp Server/Generator">
+							<img src="/img/vendor/harp.svg">
+						</a>
+						<a href="http://foundation.zurb.com/" target="_blank" class="item has-tip tip-top" data-tooltip aria-haspopup="true" title="Foundation Zurb 5">
+							<img src="/img/vendor/yeti.svg">
+						</a>
+						<a href="http://bower.io/" target="_blank" class="item has-tip tip-top" data-tooltip aria-haspopup="true" title="Bower Package Manager">
+							<img src="/img/vendor/bower.svg">
+						</a>
+						<a href="http://gruntjs.com/" target="_blank" class="item has-tip tip-top" data-tooltip aria-haspopup="true" title="Grunt Task Runner">
+							<img src="/img/vendor/grunt.png">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="/bower_components/foundation/js/foundation.min.js"></script>
+		<script src="/bower_components/slick.js/slick/slick.min.js"></script>
+		<script src="/js/app.js"></script>
+	</body>
+</html>

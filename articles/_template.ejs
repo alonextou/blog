@@ -1,0 +1,30 @@
+<!-- Nested layout -->
+
+<div class="row">
+	
+	<div class="large-8 columns  large-pull-right">
+
+		<ul class="breadcrumbs">
+			<li><a href="/">Home</a></li>
+
+			<% if(current.source !== "index") { %>
+				<li><a href="/<%= category %>"><%= category %></a></li>
+			<% } %>
+
+			<% if(title !== "Home") { %>
+				<li class="current"><a href="#"><%= title %></a></li>
+			<% } %>
+		</ul>
+
+		<% if(current.source !== "index") { %>
+			<h3><%= title %></h3>
+		<% } %>
+
+		<%- yield %>
+
+	</div>
+
+	<div class="large-4 columns">
+	</div>
+	
+</div>
