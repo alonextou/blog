@@ -1,0 +1,72 @@
+{
+	"init": {
+		"title": "Welcome to 127.0.0.1",
+		"publish": true,
+		"date": "December 07, 2014",
+		"category": "blog",
+		"image": "/assets/img/projects/paper.png",
+		"tags": [
+			"blog"
+		]
+	},
+	"justmakegames": {
+		"title": "Just Make Games",
+		"publish": true,
+		"date": "December 07, 2014",
+		"category": "projects",
+		"image": "/assets/img/projects/jmg.png",
+		"tags": [
+			"projects"
+		]
+	},
+	"cagehost": {
+		"title": "CageHost",
+		"publish": true,
+		"date": "December 07, 2014",
+		"category": "projects",
+		"image": "/assets/img/projects/cagehost.png",
+		"tags": [
+			"projects"
+		]
+	},
+	"jeld-wen": {
+		"title": "JELD-WEN",
+		"publish": true,
+		"date": "December 07, 2014",
+		"category": "projects",
+		"image": "/assets/img/projects/jeld-wen.png",
+		"tags": [
+			"projects"
+		]
+	},
+	"fbignite": {
+		"title": "Facebook Ignite",
+		"publish": true,
+		"date": "December 07, 2014",
+		"category": "projects",
+		"image": "/assets/img/projects/fbignite.png",
+		"tags": [
+			"projects"
+		]
+	},
+	"eternopia": {
+		"title": "Eternopia",
+		"publish": true,
+		"date": "December 07, 2014",
+		"category": "projects",
+		"image": "/assets/img/projects/eternopia.png",
+		"tags": [
+			"projects"
+		]
+	},
+	"harp-blog": {
+		"title": "My Harp Blog",
+		"publish": true,
+		"date": "December 07, 2014",
+		"category": "projects",
+		"image": "/assets/img/projects/paper.png",
+		"tags": [
+			"projects"
+		]
+	}
+}
