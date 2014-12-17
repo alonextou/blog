@@ -25,7 +25,31 @@
 	</div>
 
 	<div class="large-4 columns">
-		<img src="<%= image %>">
+
+		<!--
+		<% if(typeof(image) != 'undefined') { %>
+			<img src="<%= image %>">
+		<% } %>
+		-->
+		
+		<% if(typeof(files) != 'undefined') { %>
+			<h3 class="header">Related Files</h3>
+			<ul class="no-bullet">
+				<% files.forEach(function(file){ %>
+					<li>
+						<i class="fa fa-file-code-o"></i>
+						<a href="#" data-reveal-id="modal-<%= file.slug %>">
+							<%= file.title %>
+						</a>
+					</li>
+
+					<div id="modal-<%= file.slug %>" class="reveal-modal" data-reveal>
+						<%- partial('/code/src/' + current.source + '/' + file.slug) %>
+					</div>
+				<% }) %>
+			</ul>
+
+		<% } %>
 	</div>
 	
 </div>

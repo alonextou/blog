@@ -5,6 +5,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Alex Crawford</title>
 		<link rel="stylesheet" href="/assets/css/app.css" />
+		<link rel="stylesheet" href="/assets/css/vendor/prism.css" />
+		<link rel="stylesheet" href="/assets/css/vendor/prism-okaidia.css" />
+		<link rel="stylesheet" href="/assets/css/override.css" />
 	    <script src="/assets/js/vendor/modernizr.js"></script>
 	</head>
 	<body>
@@ -45,6 +48,9 @@
 					<li class="<% if(current.path[0] == 'projects' || (typeof(category) != 'undefined' && category == 'projects')) { %>active<% } %>">
 						<a href="/projects">Projects</a>
 					</li>
+					<li class="<% if(current.path[0] == 'code' || (typeof(category) != 'undefined' && category == 'code')) { %>active<% } %>">
+						<a href="/code">Code</a>
+					</li>
 				</ul>
 
 				<ul class="right mobile_contact_icons show-for-small">
@@ -55,6 +61,32 @@
 						<a href="#" class="item"><i class="fa fa-linkedin fa-2x"></i></a>
 						<a href="#" class="item"><i class="fa fa-facebook fa-2x"></i></a>
 					</div>
+					<!-- That was ugly.
+					<form>
+						<div class="row">
+						<br>
+							<div class="large-12 columns">
+								<textarea placeholder="Message"></textarea>
+							</div>
+						</div>
+						<div class="row">
+							<div class="small-8 columns">
+								<div class="row">
+									<div class="small-2 columns">
+										<span class="label">From:</span>
+									</div>
+									<div class="small-10 columns">
+										<input type="text" id="right-label" placeholder="Email address">
+									</div>
+								</div>
+							</div>
+							<div class="small-4 columns">
+								<button class="button expand success"><i class="fa fa-send-o"></i> Contact Me!</button>
+							</div>
+						</div>
+					</form>
+					<hr>
+					-->
 				</ul>
 
 			</section>
@@ -73,10 +105,10 @@
 		<div id="footer">
 			<div class="row">
 				<div id="built_with_title" class="medium-8 columns text-right hide-for-small">
-					This site is proudly built using:
+					This site is proudly built with:
 				</div>
 				<div id="built_with_title_small" class="large-12 columns text-right show-for-small">
-					This site is proudly built using::
+					This site is proudly built with::
 				</div>
 				<div id="built_with" class="medium-4 columns pull-right">
 					<div class="icon-bar four-up">
@@ -100,6 +132,9 @@
 		<script src="/assets/js/vendor/jquery.min.js"></script>
 		<script src="/assets/js/vendor/foundation.min.js"></script>
 		<script src="/assets/js/vendor/slick.min.js"></script>
+		<script src="/assets/js/vendor/prism/prism-core.min.js"></script>
+		<script src="/assets/js/vendor/prism/prism-php.min.js"></script>
+		<script src="/assets/js/vendor/prism/prism-javascript.min.js"></script>
 		<script src="/assets/js/app.js"></script>
 	</body>
 </html>

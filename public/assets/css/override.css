@@ -1,0 +1,23 @@
+code[class*="language-"]{
+	background: none;
+	border: none;
+	font-size: 11px;
+	text-shadow: none;
+}
+
+.token.operator, .token.entity, .token.url, .language-css .token.string, .style .token.string{
+	background: none;
+}
+
+#what-i-do{
+	text-align: center;
+}
+
+#what-i-do p{
+	color: #555;
+	font-weight: bold;
+}
+
+.slick-prev:before, .slick-next:before { 
+    color: #ff3737;
+}

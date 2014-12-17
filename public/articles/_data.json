@@ -1,30 +1,22 @@
 {
 	"init": {
-		"title": "Welcome to 127.0.0.1",
+		"title": "Welcome",
 		"publish": true,
 		"date": "December 07, 2014",
 		"category": "blog",
+		"intro": "My open source blog is served on Debian using Nginx and Harp.",
 		"image": "/assets/img/projects/paper.png",
 		"tags": [
 			"blog"
 		]
 	},
-	"justmakegames": {
-		"title": "Just Make Games",
+	"harp-blog": {
+		"title": "Alex Crawford",
 		"publish": true,
 		"date": "December 07, 2014",
 		"category": "projects",
-		"image": "/assets/img/projects/jmg.png",
-		"tags": [
-			"projects"
-		]
-	},
-	"cagehost": {
-		"title": "CageHost",
-		"publish": true,
-		"date": "December 07, 2014",
-		"category": "projects",
-		"image": "/assets/img/projects/cagehost.png",
+		"intro": "This open source site, served on Debian with Nginx and Harp, built with the Foundation responsive framework, was my first foray into flat file minimalism. It worked magically.",
+		"image": "/assets/img/projects/paper.png",
 		"tags": [
 			"projects"
 		]
@@ -32,39 +24,70 @@
 	"jeld-wen": {
 		"title": "JELD-WEN",
 		"publish": true,
-		"date": "December 07, 2014",
+		"date": "July 07, 2012 - 2015",
 		"category": "projects",
+		"intro": "Numerous Javascript and PHP MVC components, written in the finest Joomla adherent AJAX fashion.",
 		"image": "/assets/img/projects/jeld-wen.png",
 		"tags": [
+			"projects",
+			"code"
+		],
+		"files": [
+			{
+				"slug": "js_egresscalc",
+				"title": "egresscalc.js"
+			},
+			{
+				"slug": "php_egresscalc",
+				"title": "egresscalc.php"
+			}
+		]
+	},
+	"cagehost": {
+		"title": "CageHost",
+		"publish": true,
+		"date": "March 28, 2011 - 2015",
+		"category": "projects",
+		"intro": "Automated provisioning and billing for cPanel shared hosting, and virtual servers with dedicated resources.",
+		"image": "/assets/img/projects/cagehost.png",
+		"tags": [
 			"projects"
+		]
+	},
+	"justmakegames": {
+		"title": "Just Make Games",
+		"publish": true,
+		"date": "October 10, 2010 - 2015",
+		"category": "projects",
+		"intro": "What began as a school club became a game development social network with over 2,000 active members and 400,000 YouTube views, with tutorials, reviews, points and prizes.",
+		"image": "/assets/img/projects/jmg.png",
+		"tags": [
+			"projects"
+		]
+	},
+	"footable": {
+		"title": "FooTable Pagination Plugin",
+		"publish": true,
+		"date": "April 15, 2013",
+		"category": "code",
+		"intro": "I fell in love with these dynamic, responsive tables so much that I added pagination.",
+		"tags": [
+			"code"
+		],
+		"files": [
+			{
+				"slug": "js_paginate",
+				"title": "paginate.js"
+			}
 		]
 	},
 	"fbignite": {
 		"title": "Facebook Ignite",
 		"publish": true,
-		"date": "December 07, 2014",
+		"date": "December 06, 2011",
 		"category": "projects",
+		"intro": "Design UI and develop protoype for Facebook open source development training courses.",
 		"image": "/assets/img/projects/fbignite.png",
-		"tags": [
-			"projects"
-		]
-	},
-	"eternopia": {
-		"title": "Eternopia",
-		"publish": true,
-		"date": "December 07, 2014",
-		"category": "projects",
-		"image": "/assets/img/projects/eternopia.png",
-		"tags": [
-			"projects"
-		]
-	},
-	"harp-blog": {
-		"title": "My Harp Blog",
-		"publish": true,
-		"date": "December 07, 2014",
-		"category": "projects",
-		"image": "/assets/img/projects/paper.png",
 		"tags": [
 			"projects"
 		]

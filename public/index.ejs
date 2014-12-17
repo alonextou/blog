@@ -29,14 +29,18 @@
 		<div id="who_i_am" class="medium-6 small-12 columns">
 			<div id="who_i_am_slider">
 				<div>
-					<h5>Web / Application Developer</h5>
+					<h5>Web and Application Developer</h5>
 				</div>
 				<div>
 					<h5>DevOps Engineer</h5>
 				</div>
+				<div>
+					<h5>Free Software Evangalist <a href="#"><i class="fa fa-asterisk"></i></a></h5>
+				</div>
 			</div>
 			<p>I am a problem solver and a leader. I seek challenges that require me to overcome obstacles and implement better solutions. I am passionate about my work and rapidly evolving technology. <a href="#why-hire-me">Why hire me?</a></p>
 		</div>
+
 		<!--
 		<div>
 			<h5>DevOps Systems Administrator</h5>
@@ -49,11 +53,11 @@
 
 <div class="row">
 	<div class="medium-8 columns">
-		<h5 class="header">My Recent Projects</h5>
+		<h3 class="header">Recent Projects</h3>
 
 		<!-- slider on small -->
 
-		<div id="recent_projects_slider" class="show-for-medium-down">
+		<div id="recent_projects_slider">
 			<% for(var slug in public.articles._data){ %>
 				<% if(public.articles._data[slug].publish !== true) { continue; } %>
 				<% if(public.articles._data[slug].tags.indexOf("projects") === -1) { continue; } %>
@@ -73,6 +77,7 @@
 			<% }; %>
 		</div>
 
+		<!--
 		<div id="recent_projects" class="row hide-for-medium-down">
 			<% for(var slug in public.articles._data){ %>
 				<% if(public.articles._data[slug].publish !== true) { continue; } %>
@@ -95,22 +100,69 @@
 				</div>
 			<% }; %>
 		</div>
+		-->
 
-		<h5 id="why-hire-me" class="header">Why Hire Me?</h5>
+		<h3 id="why-hire-me" class="header">Why Hire Me?</h3>
 		<!--<p>
 		I live in Portlandia, have a high-cut combover, a mustache and black thick rimmed glasses. <br class="hide-for-medium-down">If that's not enough, I like running, biking and craft beer, sometimes in conjuction! No, I  am not willing to cut my mohawk blue, but I would die it blue if <span>Intel</span> hires me.
 		</p>-->
 		<p>
-		I operate a web hosting platform, a software development company, a game development social network and a competitive gaming league. I've curated and automated these projects for years, to the point of being self-sufficient, thus promoting my pursuit of further endeavors.
+		I operate a hosting platform, a development company, a game development community and a competitive gaming league. If you think I sound busy, understand that my devops level is over 9000! For years I've curated and automated my projects to the point of being self-sufficient, thus promoting my pursuit of future endeavors.
 		</p>
+		<hr>
+
+		<h3 class="header">Recent Blogs</h3>
+		<% for(var slug in public.articles._data){ %>
+			<% if(public.articles._data[slug].publish !== true) { continue; } %>
+			<% if(public.articles._data[slug].tags.indexOf("blog") === -1) { continue; } %>
+			
+            <h4><%= public.articles._data[slug].title %></h4>		         
+		<% }; %>
+		
 	</div>
 
 	<div class="medium-4 columns">
-		<h5 class="header">My Buzzwords</h5>
+
+		<h3 class="header">What I Do</h3>
+		<div id="what-i-do" class="panel">
+			<p>Elegant and dynamic client-driven sites</p>
+			<div class="row">
+			    <div class="small-3 columns">
+			    	<img src="http://cdn1.iconfinder.com/data/icons/iconset-addictive-flavour/png/chrome.png" alt="chrome">
+		    	</div>
+			    <div class="small-3 columns">
+			    	<img src="http://cdn1.iconfinder.com/data/icons/iconset-addictive-flavour/png/firefox.png" alt="firefox">
+		    	</div>
+			    <div class="small-3 columns">
+			    	<img src="http://cdn1.iconfinder.com/data/icons/miniiconset/48/Safari_Agua.png" alt="safari">
+		    	</div>
+			    <div class="small-3 columns">
+			    	<img src="http://cdn1.iconfinder.com/data/icons/iconset-addictive-flavour/png/internet_explorer.png" alt="ie">
+		    	</div>
+		    </div>
+		    <hr>
+		    <p>Cross-platform games and applications</p>
+    		<div class="row">
+			    <div class="small-3 columns">
+			    	<img src="https://cdn1.iconfinder.com/data/icons/metro-ui-dock/128/OS_Android.png" alt="android">
+		    	</div>
+			    <div class="small-3 columns">
+			    	<img src="https://cdn2.iconfinder.com/data/icons/metro-ui-dock/128/OS_Linux.png" alt="iphone">
+		    	</div>
+			    <div class="small-3 columns">
+			    	<img src="https://cdn1.iconfinder.com/data/icons/metro-ui-dock-icon-set--icons-by-dakirby/128/Apple.png" alt="apple">
+		    	</div>
+			    <div class="small-3 columns">
+			    	<img src="https://cdn2.iconfinder.com/data/icons/metro-ui-dock/128/OS_Windows_8.png" alt="windows">
+		    	</div>
+		    </div>
+		    <hr>
+		</div>
+
+		<h3 class="header">My Buzzwords</h3>
 		<p>
-			HTML, CSS, Javascript,
-			Mobile applications, Responsive design,
-			Server management, Architecture, DevOps,
+			HTML5, CSS3, Javascript, ES6,
+			Systems Administration, Architecture, DevOps,
 			Linux, Debian, KVM, Docker, Git, 
 			Chef, Puppet, Vagrant, NGINX, Apache,
 			PHP, C#, Java, Ruby, Python,

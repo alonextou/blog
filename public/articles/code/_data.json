@@ -1,0 +1,38 @@
+{
+	"footable": {
+		"title": "FooTable Pagination Plugin",
+		"publish": true,
+		"date": "April 15, 2013",
+		"category": "code",
+		"intro": "Boom",
+		"tags": [
+			"code"
+		],
+		"files": [
+			{
+				"slug": "js_paginate",
+				"title": "paginate.js"
+			}
+		]
+	},
+	"egresscalc": {
+		"title": "JELD-WEN Egress Calculator",
+		"publish": true,
+		"date": "April 15, 2013",
+		"category": "code",
+		"intro": "Boom",
+		"tags": [
+			"code"
+		],
+		"files": [
+			{
+				"slug": "js_component",
+				"title": "component.js"
+			},
+			{
+				"slug": "php_controller",
+				"title": "controller.php"
+			}
+		]
+	}
+}

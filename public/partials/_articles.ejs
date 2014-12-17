@@ -1,0 +1,31 @@
+<% for(var slug in public.articles._data){ %>
+
+	<% if(public.articles._data[slug].publish !== true) { continue; } %>
+	<% if(public.articles._data[slug].tags.indexOf(current.source) === -1) { continue; } %>
+
+	<div class="row blog_header">
+		<div class="small-8 columns">
+			<h5><a href="/articles/<%= slug %>">
+					<%= public.articles._data[slug].title %>
+			</a></h5>
+		</div>
+		<div class="small-4 columns text-right">
+			<small><%= public.articles._data[slug].date %></small>
+		</div>
+	</div>
+
+	<div class="row blog_header">
+		<div class="small-8 columns">
+			<p>
+				<%= public.articles._data[slug].intro %>
+			</p>
+		</div>
+
+		<div class="small-4 columns text-right">
+			<a href="/articles/<%= slug %>" class="button small secondary">See <i class="fa fa-eye"></i> more</a>
+		</div>
+	</div>
+
+	<hr>
+
+<% }; %>
