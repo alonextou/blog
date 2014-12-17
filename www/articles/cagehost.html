@@ -42,13 +42,13 @@
 				</ul>
 
 				<ul class="left">
-					<li class="<% if(current.path[0] == 'blog' || (typeof(category) != 'undefined' && category == 'blog')) { %>active<% } %>">
+					<li class="">
 						<a href="/blog">Blog</a>
 					</li>
-					<li class="<% if(current.path[0] == 'projects' || (typeof(category) != 'undefined' && category == 'projects')) { %>active<% } %>">
+					<li class="active">
 						<a href="/projects">Projects</a>
 					</li>
-					<li class="<% if(current.path[0] == 'code' || (typeof(category) != 'undefined' && category == 'code')) { %>active<% } %>">
+					<li class="">
 						<a href="/code">Code</a>
 					</li>
 				</ul>
@@ -94,11 +94,48 @@
 
 		<div id="page">
 			
-			<% if(current.path[0] == "articles" && (typeof(category) != 'undefined')) { %>
-				<%- partial("articles/_template") %>
-			<% } else { %>
-				<%- yield %>
-			<% } %>
+			
+				<!-- Nested layout -->
+
+<div class="row">
+	
+	<div class="large-8 columns  large-pull-right">
+
+		<ul class="breadcrumbs">
+			<li><a href="/">Home</a></li>
+
+			
+				<li><a href="/projects">projects</a></li>
+			
+
+			
+				<li class="current"><a href="#">CageHost</a></li>
+			
+		</ul>
+
+		
+			<h3>CageHost</h3>
+		
+
+		<p>Cagehost</p>
+
+
+	</div>
+
+	<div class="large-4 columns">
+
+		<!--
+		
+			<img src="/assets/img/projects/cagehost.png">
+		
+		-->
+		
+		
+	</div>
+	
+</div>
+
+			
 
 		</div>
 

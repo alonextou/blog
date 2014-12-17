@@ -1,0 +1,300 @@
+<!doctype html>
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Alex Crawford</title>
+		<link rel="stylesheet" href="/assets/css/app.css" />
+		<link rel="stylesheet" href="/assets/css/vendor/prism.css" />
+		<link rel="stylesheet" href="/assets/css/vendor/prism-okaidia.css" />
+		<link rel="stylesheet" href="/assets/css/override.css" />
+	    <script src="/assets/js/vendor/modernizr.js"></script>
+	</head>
+	<body>
+		<nav id="topnav" class="top-bar" data-topbar role="navigation">
+			<ul class="title-area">
+				<li class="name">
+					<h1><a href="/">Alex Crawford</a></h1>
+				</li>
+				<li class="toggle-topbar menu-icon">
+					<a href="#"><span>Menu</span></a>
+				</li>
+			</ul>
+
+			<section class="top-bar-section">
+
+				<ul class="right contact_icons hide-for-small">
+					<li>
+						<a href="#"><i class="fa fa-twitter fa-2x"></i></a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-github fa-2x"></i></a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-steam fa-2x fa-spin"></i></a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-linkedin fa-2x"></i></a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-facebook fa-2x"></i></a>
+					</li>
+				</ul>
+
+				<ul class="left">
+					<li class="">
+						<a href="/blog">Blog</a>
+					</li>
+					<li class="">
+						<a href="/projects">Projects</a>
+					</li>
+					<li class="active">
+						<a href="/code">Code</a>
+					</li>
+				</ul>
+
+				<ul class="right mobile_contact_icons show-for-small">
+					<div class="icon-bar five-up">
+						<a href="#" class="item"><i class="fa fa-twitter fa-2x"></i></a>
+						<a href="#" class="item"><i class="fa fa-github fa-2x"></i></a>
+						<a href="#" class="item"><i class="fa fa-steam fa-2x fa-spin"></i></a>
+						<a href="#" class="item"><i class="fa fa-linkedin fa-2x"></i></a>
+						<a href="#" class="item"><i class="fa fa-facebook fa-2x"></i></a>
+					</div>
+					<!-- That was ugly.
+					<form>
+						<div class="row">
+						<br>
+							<div class="large-12 columns">
+								<textarea placeholder="Message"></textarea>
+							</div>
+						</div>
+						<div class="row">
+							<div class="small-8 columns">
+								<div class="row">
+									<div class="small-2 columns">
+										<span class="label">From:</span>
+									</div>
+									<div class="small-10 columns">
+										<input type="text" id="right-label" placeholder="Email address">
+									</div>
+								</div>
+							</div>
+							<div class="small-4 columns">
+								<button class="button expand success"><i class="fa fa-send-o"></i> Contact Me!</button>
+							</div>
+						</div>
+					</form>
+					<hr>
+					-->
+				</ul>
+
+			</section>
+		</nav>
+
+		<div id="page">
+			
+			
+				<!-- Nested layout -->
+
+<div class="row">
+	
+	<div class="large-8 columns  large-pull-right">
+
+		<ul class="breadcrumbs">
+			<li><a href="/">Home</a></li>
+
+			
+				<li><a href="/code">code</a></li>
+			
+
+			
+				<li class="current"><a href="#">FooTable Pagination Plugin</a></li>
+			
+		</ul>
+
+		
+			<h3>FooTable Pagination Plugin</h3>
+		
+
+		<p><a href="#">https://github.com/bradvin/footable#thanks</a></p>
+
+	</div>
+
+	<div class="large-4 columns">
+
+		<!--
+		
+		-->
+		
+		
+			<h3 class="header">Related Files</h3>
+			<ul class="no-bullet">
+				
+					<li>
+						<i class="fa fa-file-code-o"></i>
+						<a href="#" data-reveal-id="modal-js_paginate">
+							paginate.js
+						</a>
+					</li>
+
+					<div id="modal-js_paginate" class="reveal-modal" data-reveal>
+						<pre><code class="language-javascript">(function($, w, undefined) {
+    if (w.footable == undefined || w.footable == null)
+        throw new Error(&#39;Please check and make sure footable.js is included in the page and is loaded prior to this script.&#39;);
+
+    var defaults = {
+        paginate: true,
+        increment: 10,
+        navigation: &#39;.footable-nav&#39;
+    }
+
+    function Paginate() {
+        var p = this;
+        p.name = &#39;Footable Paginate&#39;;
+        p.pages = [];
+        p.currentPage = 0;
+        p.init = function(ft) {
+            if(ft.options.paginate == true) {
+                $(ft.table).bind({
+                      &#39;footable_initialized&#39;: function(e) {
+                          var $table = $(e.ft.table), $tbody = $table.find(&#39;&gt; tbody&#39;);
+                          p.input = $table.data(&#39;nav&#39;) || e.ft.options.navigation;
+                        var pageCount = 1;
+                        var rowCount = pageCount * ft.options.increment;
+                        var page = [];
+                        var lastPage = [];
+                        $.each(p.rows(ft, $tbody), function(i, row) {
+                            page.push(row);
+                            if (i === rowCount - 1){
+                                p.pages.push(page);
+                                pageCount++;
+                                rowCount = pageCount * ft.options.increment;
+                                page = [];
+                            } else if (i &gt;= p.rows(ft, $tbody).length - (p.rows(ft, $tbody).length % ft.options.increment)) {
+                                lastPage.push(row);
+                            }
+                        });
+                        p.pages.push(lastPage);
+                        p.navigate(ft, $tbody);
+                        p.fillPage(ft, $tbody, 0);
+                        $(&#39;.footable-sortable&#39;).on(&#39;click&#39;, function(e){
+                            p.fillPage(ft, $tbody, p.currentPage);
+                        });
+                      }
+                  });
+            }
+        };
+
+        p.rows = function(ft, tbody) {
+            var rows = [];
+            var i = 1;
+            tbody.find(&#39;&gt; tr&#39;).each(function() {
+                rows.push(this);
+                $(this).attr(&#39;data-order&#39;, i);
+                i++;
+            });
+            return rows;
+        };
+
+        p.navigate = function(ft, tbody) {
+            if (p.pages.length &gt; 0) {
+                var element = $(p.input);
+                element.append(&#39;&lt;li class=&quot;arrow&quot;&gt;&lt;a href=&quot;#prev&quot;&gt;&amp;laquo;&lt;/a&gt;&lt;/li&gt;&#39;);
+                $.each(p.pages, function(i, page){
+                    if (page.length &gt; 0) {
+                        element.append(&#39;&lt;li class=&quot;page&quot;&gt;&lt;a href=&quot;#&quot;&gt;&#39; + (i + 1) + &#39;&lt;/a&gt;&lt;/li&gt;&#39;);
+                    }
+                });
+                element.append(&#39;&lt;li class=&quot;arrow&quot;&gt;&lt;a href=&quot;#next&quot;&gt;&amp;raquo;&lt;/a&gt;&lt;/li&gt;&#39;);
+            }
+            $(p.input + &#39; a&#39;).on(&#39;click&#39;, function(e) {
+                e.preventDefault();
+                if ($(this).attr(&#39;href&#39;) == &#39;#prev&#39;) {
+                    if (p.currentPage &gt; 0){
+                        p.fillPage(ft, tbody, p.currentPage - 1);
+                    }
+                } else if ($(this).attr(&#39;href&#39;) == &#39;#next&#39;) {
+                    if (p.currentPage &lt; p.pages.length - 2){
+                        p.fillPage(ft, tbody, p.currentPage + 1);
+
+                    }
+                } else {
+                    if (p.currentPage != ($(this).html() - 1)) {
+                        p.fillPage(ft, tbody, $(this).html() - 1);
+                    }
+                }
+                $(p.input + &#39; li&#39;).removeClass(&#39;current&#39;);
+                $(p.input + &#39; li.page:eq(&#39; + p.currentPage + &#39;)&#39;).addClass(&#39;current&#39;);
+            });
+            $(p.input + &#39; li.page:eq(&#39; + p.currentPage + &#39;)&#39;).addClass(&#39;current&#39;);
+        };
+
+        p.clear = function(ft, tbody) {
+            tbody.find(&#39;&gt; tr&#39;).each(function() {
+                $(this).hide();
+            });
+        };
+
+        p.fillPage = function(ft, tbody, pageNumber) {
+            p.clear(ft, tbody);
+            p.currentPage = pageNumber;
+            $.each(p.pages[pageNumber], function(i, row) {
+                tbody.find(&#39;&gt; tr:nth-child(&#39; + ( i + (ft.options.increment * pageNumber + 1) ) + &#39;)&#39;).show();
+            });
+        };
+    };
+
+    w.footable.plugins.register(new Paginate(), defaults);
+
+})(jQuery, window);</code></pre>
+
+					</div>
+				
+			</ul>
+
+		
+	</div>
+	
+</div>
+
+			
+
+		</div>
+
+		<div id="footer">
+			<div class="row">
+				<div id="built_with_title" class="medium-8 columns text-right hide-for-small">
+					This site is proudly built with:
+				</div>
+				<div id="built_with_title_small" class="large-12 columns text-right show-for-small">
+					This site is proudly built with::
+				</div>
+				<div id="built_with" class="medium-4 columns pull-right">
+					<div class="icon-bar four-up">
+						<a href="http://harpjs.com/" target="_blank" class="item has-tip tip-top" data-tooltip aria-haspopup="true" title="Harp Web Server">
+							<img src="/assets/img/vendor/harp.svg">
+						</a>
+						<a href="http://foundation.zurb.com/" target="_blank" class="item has-tip tip-top" data-tooltip aria-haspopup="true" title="Foundation Zurb 5">
+							<img src="/assets/img/vendor/yeti.svg">
+						</a>
+						<a href="http://bower.io/" target="_blank" class="item has-tip tip-top" data-tooltip aria-haspopup="true" title="Bower Package Manager">
+							<img src="/assets/img/vendor/bower.svg">
+						</a>
+						<a href="http://gruntjs.com/" target="_blank" class="item has-tip tip-top" data-tooltip aria-haspopup="true" title="Grunt Task Runner">
+							<img src="/assets/img/vendor/grunt.png">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="/assets/js/vendor/jquery.min.js"></script>
+		<script src="/assets/js/vendor/foundation.min.js"></script>
+		<script src="/assets/js/vendor/slick.min.js"></script>
+		<script src="/assets/js/vendor/prism/prism-core.min.js"></script>
+		<script src="/assets/js/vendor/prism/prism-php.min.js"></script>
+		<script src="/assets/js/vendor/prism/prism-javascript.min.js"></script>
+		<script src="/assets/js/app.js"></script>
+	</body>
+</html>

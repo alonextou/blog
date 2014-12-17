@@ -1,0 +1,669 @@
+<!doctype html>
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Alex Crawford</title>
+		<link rel="stylesheet" href="/assets/css/app.css" />
+		<link rel="stylesheet" href="/assets/css/vendor/prism.css" />
+		<link rel="stylesheet" href="/assets/css/vendor/prism-okaidia.css" />
+		<link rel="stylesheet" href="/assets/css/override.css" />
+	    <script src="/assets/js/vendor/modernizr.js"></script>
+	</head>
+	<body>
+		<nav id="topnav" class="top-bar" data-topbar role="navigation">
+			<ul class="title-area">
+				<li class="name">
+					<h1><a href="/">Alex Crawford</a></h1>
+				</li>
+				<li class="toggle-topbar menu-icon">
+					<a href="#"><span>Menu</span></a>
+				</li>
+			</ul>
+
+			<section class="top-bar-section">
+
+				<ul class="right contact_icons hide-for-small">
+					<li>
+						<a href="#"><i class="fa fa-twitter fa-2x"></i></a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-github fa-2x"></i></a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-steam fa-2x fa-spin"></i></a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-linkedin fa-2x"></i></a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-facebook fa-2x"></i></a>
+					</li>
+				</ul>
+
+				<ul class="left">
+					<li class="">
+						<a href="/blog">Blog</a>
+					</li>
+					<li class="active">
+						<a href="/projects">Projects</a>
+					</li>
+					<li class="">
+						<a href="/code">Code</a>
+					</li>
+				</ul>
+
+				<ul class="right mobile_contact_icons show-for-small">
+					<div class="icon-bar five-up">
+						<a href="#" class="item"><i class="fa fa-twitter fa-2x"></i></a>
+						<a href="#" class="item"><i class="fa fa-github fa-2x"></i></a>
+						<a href="#" class="item"><i class="fa fa-steam fa-2x fa-spin"></i></a>
+						<a href="#" class="item"><i class="fa fa-linkedin fa-2x"></i></a>
+						<a href="#" class="item"><i class="fa fa-facebook fa-2x"></i></a>
+					</div>
+					<!-- That was ugly.
+					<form>
+						<div class="row">
+						<br>
+							<div class="large-12 columns">
+								<textarea placeholder="Message"></textarea>
+							</div>
+						</div>
+						<div class="row">
+							<div class="small-8 columns">
+								<div class="row">
+									<div class="small-2 columns">
+										<span class="label">From:</span>
+									</div>
+									<div class="small-10 columns">
+										<input type="text" id="right-label" placeholder="Email address">
+									</div>
+								</div>
+							</div>
+							<div class="small-4 columns">
+								<button class="button expand success"><i class="fa fa-send-o"></i> Contact Me!</button>
+							</div>
+						</div>
+					</form>
+					<hr>
+					-->
+				</ul>
+
+			</section>
+		</nav>
+
+		<div id="page">
+			
+			
+				<!-- Nested layout -->
+
+<div class="row">
+	
+	<div class="large-8 columns  large-pull-right">
+
+		<ul class="breadcrumbs">
+			<li><a href="/">Home</a></li>
+
+			
+				<li><a href="/projects">projects</a></li>
+			
+
+			
+				<li class="current"><a href="#">JELD-WEN</a></li>
+			
+		</ul>
+
+		
+			<h3>JELD-WEN</h3>
+		
+
+		<p>JELD-WEN</p>
+
+
+	</div>
+
+	<div class="large-4 columns">
+
+		<!--
+		
+			<img src="/assets/img/projects/jeld-wen.png">
+		
+		-->
+		
+		
+			<h3 class="header">Related Files</h3>
+			<ul class="no-bullet">
+				
+					<li>
+						<i class="fa fa-file-code-o"></i>
+						<a href="#" data-reveal-id="modal-js_egresscalc">
+							egresscalc.js
+						</a>
+					</li>
+
+					<div id="modal-js_egresscalc" class="reveal-modal" data-reveal>
+						<pre><code class="language-javascript">if ($(&#39;#com_jw_egresscalc&#39;).length &gt; 0 ) {
+    var egresscalc = new Com_jw_egresscalc();
+    egresscalc.init();
+}
+
+function Com_jw_egresscalc () {
+
+    var self = this;
+    self.allOptions;
+    self.inputForm = $(&#39;#com_jw_egresscalc form&#39;);
+    self.inputMaterial = $(&#39;#com_jw_egresscalc form select[name=&quot;material&quot;]&#39;);
+    self.inputProduct = $(&#39;#com_jw_egresscalc form select[name=&quot;product&quot;]&#39;);
+    self.inputStyle = $(&#39;#com_jw_egresscalc form select[name=&quot;style&quot;]&#39;);
+    self.inputSizes = $(&#39;#com_jw_egresscalc form #egresscalc-size-input&#39;);
+    self.inputSizesType = $(&#39;#com_jw_egresscalc form input[name=&quot;input-size-type&quot;]&#39;);
+    self.inputFrameWidth = $(&#39;#com_jw_egresscalc form input[name=&quot;frameWidth&quot;]&#39;);
+    self.inputFrameWidthFraction = $(&#39;#com_jw_egresscalc form select[name=&quot;frameWidth_fraction&quot;]&#39;);
+    self.inputFrameHeight = $(&#39;#com_jw_egresscalc form input[name=&quot;frameHeight&quot;]&#39;);
+    self.inputFrameHeightFraction = $(&#39;#com_jw_egresscalc form select[name=&quot;frameHeight_fraction&quot;]&#39;);
+    self.inputLegHeight = $(&#39;#com_jw_egresscalc form input[name=&quot;legHeight&quot;]&#39;);
+    self.inputLegHeightFraction = $(&#39;#com_jw_egresscalc form select[name=&quot;legHeight_fraction&quot;]&#39;);
+    self.selectedInputSizesType = &#39;fraction&#39;;
+    self.formulas = [];
+    self.results = [];
+    self.errors = {};
+    self.egressChecks = {
+        first: {
+            cow: &#39;&gt;= 20&#39;,
+            coh: &#39;&gt;= 24&#39;,
+            cos: &#39;&gt;= 5.0&#39;,
+            vas: &#39;&gt;= 0&#39;,
+            dos: &#39;&gt;= 0&#39;
+        },
+        second: {
+            cow: &#39;&gt;= 20&#39;,
+            coh: &#39;&gt;= 24&#39;,
+            cos: &#39;&gt;= 5.7&#39;,
+            vas: &#39;&gt;= 0&#39;,
+            dos: &#39;&gt;= 0&#39;
+        }
+    }
+    /*
+    self.egressChecks = {
+        cow: &#39;&gt;= 20&#39;,
+        coh: &#39;&gt;= 24&#39;,
+        cos: {
+            first: &#39;&gt;= 5.0&#39;,
+            second: &#39;&gt;= 5.7&#39;
+        }
+        vas: &#39;&gt;= 0&#39;,
+        dos: &#39;&gt;= 0&#39;
+    }
+    */
+
+    self.init = function() {
+        self.inputMaterial.attr(&quot;disabled&quot;, true);
+        self.inputProduct.attr(&quot;disabled&quot;, true);
+        self.inputStyle.attr(&quot;disabled&quot;, true);
+
+        self.getOptions().done(function(data) {
+            self.allOptions = JSON.parse(data);
+            self.fillMaterials();
+            self.inputMaterial.bind(&#39;change&#39;, self.fillProducts);
+            self.inputProduct.bind(&#39;change&#39;, self.fillStyles);
+            self.inputStyle.bind(&#39;change&#39;, self.showHideSizing);
+            self.inputSizesType.bind(&#39;change&#39;, self.switchSizesType);
+            self.inputForm.bind(&#39;submit&#39;, function(e){
+                e.preventDefault();
+                self.processForm();
+            });
+            self.inputSizes.find(&#39;input&#39;).bind(&#39;keyup&#39;, function(){
+                $(&#39;#egresscalc-results&#39;).hide();
+            });
+            self.inputSizes.find(&#39;select&#39;).bind(&#39;change&#39;, function(){
+                $(&#39;#egresscalc-results&#39;).hide();
+            });
+        });
+    }
+
+    self.serviceDown = function(error) {
+        $(&#39;#egresscalc-service-down&#39;).show();
+        if (typeof error != &#39;undefined&#39;) {
+            console.log(error);
+        }
+    }
+
+    self.getOptions = function() {
+        return $.ajax({
+            url: &#39;index.php/?option=com_jw_egresscalc&amp;task=egresscalc.getOptions&amp;format=raw&#39;,
+            error: function(xhr, status, error){
+                self.serviceDown(xhr.status + &quot;: &quot; + error);
+            }
+        });
+    }
+
+    self.fillMaterials = function() {
+        $.each(self.allOptions, function(index, material) {
+            self.inputMaterial.append($(&#39;&lt;option&gt;&#39;, {value: index}).text(material.title));
+        });
+        self.inputMaterial.attr(&quot;disabled&quot;, false);
+        self.inputProduct.attr(&quot;disabled&quot;, false);
+        self.inputStyle.attr(&quot;disabled&quot;, false);
+    }
+
+    self.fillProducts = function() {
+        var materialId = self.inputMaterial.val();
+
+        self.clearInput(&#39;product&#39;);
+        self.clearInput(&#39;style&#39;);
+        self.showHideSizing();
+
+        if (!materialId) {
+            return;
+        }
+
+        $.each(self.allOptions[materialId].products, function(index, product) {
+            self.inputProduct.append($(&#39;&lt;option&gt;&#39;, {value: index}).text(product.title));
+        });
+    }
+
+    self.fillStyles = function() {
+        var materialId = self.inputMaterial.val();
+        var productId = self.inputProduct.val();
+
+        self.clearInput(&#39;style&#39;);
+        self.showHideSizing();
+
+        if (!productId) {
+            return;
+        }
+
+        $.each(self.allOptions[materialId].products[productId].styles, function(index, style) {
+            self.inputStyle.append($(&#39;&lt;option&gt;&#39;, {value: style.id}).text(style.title));
+        });
+    }
+
+    self.clearInput = function(inputField) {
+        inputField = inputField.charAt(0).toUpperCase() + inputField.slice(1);
+        eval(&#39;self.input&#39; + inputField).find(&#39;option:not(.placeholder)&#39;).remove();
+    }
+
+    self.showHideSizing = function() {
+        var styleId = self.inputStyle.val();
+        var frameWidth = self.inputFrameWidth.val();
+        var frameHeight = self.inputFrameHeight.val();
+
+        if (!styleId) {
+            self.inputSizes.find(&#39;input[type=&quot;text&quot;], select&#39;).val(&#39;&#39;);
+            self.inputSizes.hide();  
+            $(&#39;#egresscalc-results&#39;).hide();
+        } else {
+            self.getFormula(styleId, frameWidth, frameHeight).done(function(data) {
+                self.formulas = JSON.parse(data);
+                $(&#39;#egresscalc-size-input&gt;h3&#39;).html(self.inputStyle.find(&#39;option:selected&#39;).text());
+                self.inputSizes.show();
+                if(self.formulas.has_leg == 1) {
+                    $(&#39;#egresscalc-input-legheight&#39;).show();
+                } else {
+                    $(&#39;#egresscalc-input-legheight&#39;).hide();
+                }
+                self.errors = {};
+                self.inputForm.find(&#39;input.error&#39;).removeClass(&#39;error&#39;).prev(&#39;.error&#39;).text(&#39;&#39;);
+            });        
+        }
+    }
+
+    self.switchSizesType = function() {
+        self.selectedInputSizesType = $(&#39;input[name=&quot;input-size-type&quot;]:checked&#39;).val();
+        self.inputForm.find(&#39;input.error&#39;).removeClass(&#39;error&#39;).prev(&#39;.error&#39;).text(&#39;&#39;);
+        $(&#39;#egresscalc-results&#39;).hide();
+        if(self.selectedInputSizesType === &#39;decimal&#39;) {
+            self.inputSizes.find(&#39;select.fraction-dropdown&#39;).hide();
+            self.inputSizes.find(&#39;select.fraction-dropdown&#39;).val(&#39;&#39;);
+        } else {
+            self.inputSizes.find(&#39;select.fraction-dropdown&#39;).show();
+        }
+    }
+
+    self.processForm = function() {
+        var styleId = self.inputStyle.val();
+        var frameWidth = self.inputFrameWidth.val();
+        var frameWidthFraction = self.inputFrameWidthFraction.val();
+        var frameHeight = self.inputFrameHeight.val();
+        var frameHeightFraction = self.inputFrameHeightFraction.val();
+        var legHeight = self.inputLegHeight.val();
+        var legHeightFraction = self.inputLegHeightFraction.val();
+        var formulas = self.formulas;
+
+        self.errors = {};
+        self.validateField(self.inputFrameWidth);
+        self.validateField(self.inputFrameHeight);
+        if(self.formulas.has_leg == true){
+            self.validateField(self.inputLegHeight);
+        }
+
+        if($.isEmptyObject(self.errors)) {
+            if(self.selectedInputSizesType === &#39;fraction&#39;) {
+                if(frameWidthFraction != &#39;&#39;){
+                    frameWidth = self.addFraction(frameWidth, frameWidthFraction);
+                }
+                if(frameHeightFraction != &#39;&#39;){
+                    frameHeight = self.addFraction(frameHeight, frameHeightFraction);
+                }
+                if(legHeightFraction != &#39;&#39;){
+                    legHeight = self.addFraction(legHeight, legHeightFraction);
+                }
+            }
+            self.postForm(styleId, frameWidth, frameHeight, legHeight, formulas).done(function(data) {
+                self.results = JSON.parse(data);
+                self.fillResults();
+                self.checkResults();
+            });
+        } else {
+            $(&#39;#egresscalc-results&#39;).hide();
+        }
+    }
+
+    self.validateField = function(field) {
+        field.removeClass(&#39;error&#39;);
+        field.prev(&#39;.error&#39;).text(&#39;&#39;);
+
+        var messages = {
+            blank: &#39;This field can not be left blank.&#39;,
+            numeric: &#39;This field must be a numeric value.&#39;,
+            decimal: &#39;Please switch input type to decimals.&#39;,
+            comma: &#39;This field may not contain commas.&#39;,
+            fraction: &#39;Please switch input type to fractions.&#39;
+        }
+
+        // Number
+        if(isNaN(field.val())) {
+            self.errors[field.attr(&#39;name&#39;)] = messages.numeric;
+            field.prev(&#39;.error&#39;).text(messages.numeric);
+            field.addClass(&#39;error&#39;);
+        }
+
+        // Fraction
+        if(self.selectedInputSizesType === &#39;decimal&#39;) {
+            if(field.val().indexOf(&#39;/&#39;) != -1)
+            {
+                self.errors[field.attr(&#39;name&#39;)] = messages.fraction;
+                field.prev(&#39;.error&#39;).text(messages.fraction);
+                field.addClass(&#39;error&#39;);
+            }
+        }
+
+        // Decimal
+        if(self.selectedInputSizesType === &#39;fraction&#39;) {
+            if(field.val().indexOf(&#39;.&#39;) != -1)
+            {
+                self.errors[field.attr(&#39;name&#39;)] = messages.decimal;
+                field.prev(&#39;.error&#39;).text(messages.decimal);
+                field.addClass(&#39;error&#39;);
+            }
+        }
+
+        // Comma
+        if(self.selectedInputSizesType === &#39;fraction&#39;) {
+            if(field.val().indexOf(&#39;,&#39;) != -1)
+            {
+                self.errors[field.attr(&#39;name&#39;)] = messages.comma;
+                field.prev(&#39;.error&#39;).text(messages.comma);
+                field.addClass(&#39;error&#39;);
+            }
+        }
+
+        // Blank
+        if(field.val() === &#39;&#39;) {
+            self.errors[field.attr(&#39;name&#39;)] = messages.blank;
+            field.prev(&#39;.error&#39;).text(messages.blank);
+            field.addClass(&#39;error&#39;);
+        }
+    }
+
+    self.postForm = function(styleId, frameWidth, frameHeight, legHeight, formulas) {
+        return $.ajax({
+            url: &#39;index.php/?option=com_jw_egresscalc&amp;task=egresscalc.postForm&amp;format=raw&#39;,
+            data: { styleId: styleId, frameWidth: frameWidth, frameHeight: frameHeight, legHeight: legHeight, formulas: formulas },
+            error: function(xhr, status, error){
+                self.serviceDown(xhr.status + &quot;: &quot; + error);
+            }
+        });
+    }
+
+    self.getFormula = function(styleId, framewidth, frameheight) {
+        return $.ajax({
+            url: &#39;index.php/?option=com_jw_egresscalc&amp;task=egresscalc.getFormula&amp;format=raw&#39;,
+            data: { styleId: styleId },
+            error: function(xhr, status, error){
+                self.serviceDown(xhr.status + &quot;: &quot; + error);
+            }
+        });
+    }
+
+    self.fillResults = function() {
+        $(&#39;#egresscalc-results&#39;).show();
+        $(&#39;#egresscalc-results tbody tr&#39;).hide();
+        $.each(self.results, function(index, value) {
+            $(&#39;#com_jw_egresscalc #egresscalc-results tr[data-result=&quot;&#39; + index + &#39;&quot;]&#39;).show();
+            $(&#39;#com_jw_egresscalc #egresscalc-results tr[data-result=&quot;&#39; + index + &#39;&quot;] td.result&#39;).html(value);
+        });
+    }
+
+    self.checkResults = function() {
+        var hasError = false;
+        var errors = {
+            second: {},
+            first: {}
+        };
+        var errorMessages = {
+            second: &quot;Meets IRC egress requirements for 1st floor only.&quot;,
+            first: &quot;Does NOT meet IRC Egress Requirements.&quot;
+        };
+        $(&#39;#egresscalc-results td&#39;).removeClass(&#39;error&#39;);
+        $.each(self.results, function(key) {
+            $.each(self.egressChecks, function(floor) {
+                if(!self.resultPasses(key, floor)) {
+                    hasError = true;
+                    errors[floor][key] = true;
+                    $(&#39;#com_jw_egresscalc #egresscalc-results tr[data-result=&quot;&#39; + key + &#39;&quot;] td.&#39; + floor).addClass(&#39;error&#39;);
+                }
+            });
+        });
+        if(hasError === true) {
+            $.each(errors, function(floor, value) {
+                if(!$.isEmptyObject(value)){
+                    $(&#39;#com_jw_egresscalc .result-message&#39;).html(&#39;&lt;span class=&quot;warning&quot;&gt;&#39; + errorMessages[floor] + &#39;&lt;/span&gt;&#39;);
+                }
+            });
+        } else {
+            $(&#39;#com_jw_egresscalc .result-message&#39;).html(&#39;&lt;span class=&quot;success&quot;&gt;Meets IRC Egress Requirements.&lt;/span&gt;&#39;);
+        }
+    }
+
+    self.resultPasses = function(key, floor) {
+        return eval(self.results[key] + self.egressChecks[floor][key]);
+    }
+
+    self.addFraction = function(number, fraction) {
+        var splitFraction = fraction.split(&#39;/&#39;);
+        fraction = splitFraction[0] / splitFraction[1];
+        return parseFloat(number) + fraction;
+    }
+
+}</code></pre>
+
+					</div>
+				
+					<li>
+						<i class="fa fa-file-code-o"></i>
+						<a href="#" data-reveal-id="modal-php_egresscalc">
+							egresscalc.php
+						</a>
+					</li>
+
+					<div id="modal-php_egresscalc" class="reveal-modal" data-reveal>
+						<pre><code class="language-php">&lt;?php
+
+/**
+ * @version     1.0.0
+ * @package     com_jw_egresscalc
+ * @copyright   JELD-WEN © Copyright 2012. All Rights Reserved.
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ * @author      Alex Crawford &lt;alexc@jeld-wen.com&gt; - JELD-WEN http://jeld-wen.com
+ */
+
+header(&#39;Content-Type: application/json&#39;);
+defined(&#39;_JEXEC&#39;) or die;
+require_once JPATH_COMPONENT.&#39;/controller.php&#39;;
+
+class Jw_egresscalcControllerEgresscalc extends Jw_egresscalcController
+{
+    public function getOptions(){
+
+        $allOptions = array();
+        $materialModel = $this-&gt;getModel(&#39;material&#39;);
+        $productModel = $this-&gt;getModel(&#39;product&#39;);
+        $styleModel = $this-&gt;getModel(&#39;style&#39;);
+
+        $materials = $materialModel-&gt;getMaterials();
+
+        foreach($materials as $material) {
+            $materialProducts = array();
+            $products = $productModel-&gt;getProductsByMaterialId($material-&gt;id);
+            foreach($products as $product) {
+                $styles = $styleModel-&gt;getStylesByProductId($product-&gt;id);
+                $productStyles = array();
+                foreach($styles as $style) {
+                    $productStyles[] = array(
+                        &#39;id&#39; =&gt; $style-&gt;id,
+                        &#39;title&#39; =&gt; $style-&gt;title
+                    );
+                }
+                $materialProducts[] = array(
+                    &#39;id&#39; =&gt; $product-&gt;id,
+                    &#39;title&#39; =&gt; $product-&gt;title,
+                    &#39;styles&#39; =&gt; $productStyles
+                );
+            }
+            $allOptions[] = array(
+                &#39;id&#39; =&gt; $material-&gt;id,
+                &#39;title&#39; =&gt; $material-&gt;title,
+                &#39;products&#39; =&gt; $materialProducts
+            );
+        }
+
+        echo json_encode($allOptions);
+
+    }
+
+    public function postForm(){
+
+        $styleId = (empty($_GET[&#39;styleId&#39;]) ? null : $_GET[&#39;styleId&#39;]);
+        $formulas = (empty($_GET[&#39;formulas&#39;]) ? null : $_GET[&#39;formulas&#39;]);
+        $frameWidth = (empty($_GET[&#39;frameWidth&#39;]) ? null : $_GET[&#39;frameWidth&#39;]);
+        $frameHeight = (empty($_GET[&#39;frameHeight&#39;]) ? null : $_GET[&#39;frameHeight&#39;]);
+        $legHeight = (empty($_GET[&#39;legHeight&#39;]) ? null : $_GET[&#39;legHeight&#39;]);
+
+        $calcFormulas = array();
+        $formulaAbbreviations = array(&#39;cow&#39;, &#39;coh&#39;, &#39;cos&#39;, &#39;vas&#39;, &#39;dos&#39;);
+        foreach($formulaAbbreviations as $abbrv) {
+            $jsonFormulas = json_decode($formulas[$abbrv]);
+            if (!empty($jsonFormulas)) {
+                $calcFormulas[$abbrv] = $jsonFormulas;
+            }
+        }
+
+        $results = array();
+        $variables = array(&#39;FrameWidth&#39;, &#39;FrameHeight&#39;);
+        $values = array($frameWidth, $frameHeight);
+
+        if($legHeight != null){
+            array_push($variables, &#39;LegHeight&#39;);
+            array_push($values, $legHeight);
+        }
+
+        foreach($calcFormulas as $abbrv =&gt; $formulaConditions){
+            foreach($formulaConditions as $formulaCondition){
+                $condition = str_replace($variables, $values, $formulaCondition-&gt;condition);
+                $condition = (empty($condition) ? true : $condition);
+                if($this-&gt;calc_string($condition)) {
+                    $formula = str_replace($variables, $values, $formulaCondition-&gt;formula);
+                    $result = $this-&gt;calc_string($formula);
+                    $results[$abbrv] = $result;
+                    array_push($variables, strtoupper($abbrv));
+                    array_push($values, $result);
+                    break;
+                }
+
+            }            
+        }
+
+        echo json_encode($results);
+
+    }
+
+    public function getFormula(){
+
+        $styleId = (empty($_GET[&#39;styleId&#39;]) ? null : $_GET[&#39;styleId&#39;]);
+
+        $formulaModel = $this-&gt;getModel(&#39;formula&#39;);
+        $formulas = $formulaModel-&gt;getFormulaByStyleId($styleId);
+
+        echo json_encode($formulas);
+
+    }
+
+    function calc_string($mathString)
+    {
+        $cf_DoCalc = create_function(&quot;&quot;, &quot;return (&quot;.$mathString.&quot;);&quot;);
+        $rounded = round($cf_DoCalc(), 3);
+        return $rounded;
+    }
+
+}</code></pre>
+
+					</div>
+				
+			</ul>
+
+		
+	</div>
+	
+</div>
+
+			
+
+		</div>
+
+		<div id="footer">
+			<div class="row">
+				<div id="built_with_title" class="medium-8 columns text-right hide-for-small">
+					This site is proudly built with:
+				</div>
+				<div id="built_with_title_small" class="large-12 columns text-right show-for-small">
+					This site is proudly built with::
+				</div>
+				<div id="built_with" class="medium-4 columns pull-right">
+					<div class="icon-bar four-up">
+						<a href="http://harpjs.com/" target="_blank" class="item has-tip tip-top" data-tooltip aria-haspopup="true" title="Harp Web Server">
+							<img src="/assets/img/vendor/harp.svg">
+						</a>
+						<a href="http://foundation.zurb.com/" target="_blank" class="item has-tip tip-top" data-tooltip aria-haspopup="true" title="Foundation Zurb 5">
+							<img src="/assets/img/vendor/yeti.svg">
+						</a>
+						<a href="http://bower.io/" target="_blank" class="item has-tip tip-top" data-tooltip aria-haspopup="true" title="Bower Package Manager">
+							<img src="/assets/img/vendor/bower.svg">
+						</a>
+						<a href="http://gruntjs.com/" target="_blank" class="item has-tip tip-top" data-tooltip aria-haspopup="true" title="Grunt Task Runner">
+							<img src="/assets/img/vendor/grunt.png">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="/assets/js/vendor/jquery.min.js"></script>
+		<script src="/assets/js/vendor/foundation.min.js"></script>
+		<script src="/assets/js/vendor/slick.min.js"></script>
+		<script src="/assets/js/vendor/prism/prism-core.min.js"></script>
+		<script src="/assets/js/vendor/prism/prism-php.min.js"></script>
+		<script src="/assets/js/vendor/prism/prism-javascript.min.js"></script>
+		<script src="/assets/js/app.js"></script>
+	</body>
+</html>

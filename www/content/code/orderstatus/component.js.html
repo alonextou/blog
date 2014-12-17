@@ -1,0 +1,436 @@
+<!doctype html>
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Alex Crawford</title>
+		<link rel="stylesheet" href="/assets/css/app.css" />
+		<link rel="stylesheet" href="/assets/css/vendor/prism.css" />
+		<link rel="stylesheet" href="/assets/css/vendor/prism-okaidia.css" />
+		<link rel="stylesheet" href="/assets/css/override.css" />
+	    <script src="/assets/js/vendor/modernizr.js"></script>
+	</head>
+	<body>
+		<nav id="topnav" class="top-bar" data-topbar role="navigation">
+			<ul class="title-area">
+				<li class="name">
+					<h1><a href="/">Alex Crawford</a></h1>
+				</li>
+				<li class="toggle-topbar menu-icon">
+					<a href="#"><span>Menu</span></a>
+				</li>
+			</ul>
+
+			<section class="top-bar-section">
+
+				<ul class="right contact_icons hide-for-small">
+					<li>
+						<a href="#"><i class="fa fa-twitter fa-2x"></i></a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-github fa-2x"></i></a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-steam fa-2x fa-spin"></i></a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-linkedin fa-2x"></i></a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-facebook fa-2x"></i></a>
+					</li>
+				</ul>
+
+				<ul class="left">
+					<li class="">
+						<a href="/blog">Blog</a>
+					</li>
+					<li class="">
+						<a href="/projects">Projects</a>
+					</li>
+					<li class="">
+						<a href="/code">Code</a>
+					</li>
+				</ul>
+
+				<ul class="right mobile_contact_icons show-for-small">
+					<div class="icon-bar five-up">
+						<a href="#" class="item"><i class="fa fa-twitter fa-2x"></i></a>
+						<a href="#" class="item"><i class="fa fa-github fa-2x"></i></a>
+						<a href="#" class="item"><i class="fa fa-steam fa-2x fa-spin"></i></a>
+						<a href="#" class="item"><i class="fa fa-linkedin fa-2x"></i></a>
+						<a href="#" class="item"><i class="fa fa-facebook fa-2x"></i></a>
+					</div>
+					<!-- That was ugly.
+					<form>
+						<div class="row">
+						<br>
+							<div class="large-12 columns">
+								<textarea placeholder="Message"></textarea>
+							</div>
+						</div>
+						<div class="row">
+							<div class="small-8 columns">
+								<div class="row">
+									<div class="small-2 columns">
+										<span class="label">From:</span>
+									</div>
+									<div class="small-10 columns">
+										<input type="text" id="right-label" placeholder="Email address">
+									</div>
+								</div>
+							</div>
+							<div class="small-4 columns">
+								<button class="button expand success"><i class="fa fa-send-o"></i> Contact Me!</button>
+							</div>
+						</div>
+					</form>
+					<hr>
+					-->
+				</ul>
+
+			</section>
+		</nav>
+
+		<div id="page">
+			
+			
+				<p>if ($(&#39;#com_jw_lookup&#39;).length &gt; 0 ){
+    var com_jw_lookup = new Com_jw_lookup();
+    com_jw_lookup.init();
+}</p>
+<p>function Com_jw_lookup(){</p>
+<pre><code>var self = this;
+self.order = {};
+self.ordertype;
+self.inputmask = {};
+self.inputmask[&#39;store&#39;] = &#39;1234-123456&#39;;
+self.inputmask[&#39;online&#39;] = &#39;W123456789&#39;;
+self.inputlength = {};
+self.inputlength[&#39;store&#39;] = 11;
+self.inputlength[&#39;online&#39;] = 10;
+self.phones = {};
+self.phones[&#39;store&#39;] = &#39;1-800-HOME-DEPOT (1-800-466-3337)&#39;;
+self.phones[&#39;online&#39;] = &#39;1-800-430-3376&#39;;
+
+self.init = function(){
+
+    // Next
+    $(&#39;input.next&#39;).click(function(){
+        var valid = self.validateStep(1);
+        if(!valid) return false;
+
+        self.ordertype = $(&#39;input[name=&quot;ordertype&quot;]:checked&#39;).val();
+        $(&#39;.typeinfo&#39;).hide();
+        $(&#39;.typeinfo[data-type=&#39; + self.ordertype + &#39;]&#39;).show();
+
+        if(self.ordertype === &#39;online&#39;){
+            $(&#39;#lookup-contact h6 b&#39;).html(self.phones[self.ordertype]);
+        }
+
+        var ordernumInput = $(&#39;input[name=&quot;ordernum&quot;]&#39;);
+        $(ordernumInput).attr(&quot;placeholder&quot;, self.inputmask[self.ordertype]);
+        $(ordernumInput).attr(&quot;maxlength&quot;, self.inputlength[self.ordertype]);
+
+        $(&#39;.lookup-step[data-step=1]&#39;).hide();
+        $(&#39;.lookup-step[data-step=2]&#39;).show();
+        $(&#39;#errormsg&#39;).html(&#39;&#39;).hide();
+    });
+
+    // Prev
+    $(&#39;input.prev&#39;).click(function(){
+        $(&#39;input[name=&quot;ordernum&quot;]&#39;).val(&#39;&#39;);
+        $(&#39;input[name=&quot;lastname&quot;]&#39;).val(&#39;&#39;);
+        $(&#39;.lookup-step[data-step=2]&#39;).hide();
+        $(&#39;.lookup-step[data-step=1]&#39;).show();
+        $(&#39;#errormsg&#39;).html(&#39;&#39;).hide();
+        $(&#39;#lookup-contact h6 b&#39;).html(&#39;1-800-HOME-DEPOT &lt;br&gt; (1-800-466-3337)&#39;);
+    });
+
+    // Submit
+    $(&#39;#lookup-form&#39;).submit(function(e){
+        e.preventDefault();
+
+        var valid = self.validateStep(2);
+        if(!valid) return false;
+
+        var form = this;
+        var url = form.action;
+        var input = $(&#39;#lookup-form&#39;).serialize();
+        $.post(url, input)
+            .done(function(response){
+                if(response.result == &#39;success&#39;){
+                    self.showResult(response);
+                } else if(response.result == &#39;fail&#39;){
+                    self.showFail();
+                } else {
+                    self.showNoResult();
+                }
+            }).fail(function(xhr) {
+                self.showFail();
+                console.log(xhr);
+            }
+        );
+    });
+
+    // New Lookup
+    $(&#39;input.newlookup&#39;).click(function(){
+        $(&#39;#lookup-result li&#39;).removeClass();
+        $(&#39;#lookup-result li .check&#39;).hide();
+        $(&#39;#lookup-result .ordernum&#39;).html(&#39;&#39;);
+        $(&#39;#lookup-result #recdate&#39;).html(&#39;&#39;);
+        $(&#39;#lookup-result #estdate&#39;).html(&#39;Not Yet Available&#39;);
+        $(&#39;input[name=&quot;ordertype&quot;]&#39;).prop(&#39;checked&#39;, false);
+        $(&#39;input[name=&quot;ordernum&quot;]&#39;).val(&#39;&#39;);
+        $(&#39;input[name=&quot;lastname&quot;]&#39;).val(&#39;&#39;);
+        $(&#39;.lookup-step[data-step=3]&#39;).hide();
+        $(&#39;.lookup-step[data-step=1]&#39;).show();
+        $(&#39;#lookup-contact h6 b&#39;).html(&#39;1-800-HOME-DEPOT &lt;br&gt; (1-800-466-3337)&#39;);
+    });
+
+    // Loading icon
+    $(&quot;#ajax-loader&quot;).bind(&quot;ajaxStart&quot;, function(){
+        $(this).show();
+    }).bind(&quot;ajaxComplete&quot;, function(){
+        $(this).hide();
+    });
+
+    // Invoice Modal
+    $(&#39;a#popup-store&#39;).click(function(e){
+        console.log($(this).data(&#39;path&#39;));
+        var path = $(this).data(&#39;path&#39;) + &#39;components/com_jw_lookup/assets/img/invoices/&#39; + self.ordertype + &#39;.png&#39;;
+        modal.open({
+                content: &#39;&lt;img src=&quot;&#39; + path + &#39;&quot; width=&quot;100%&quot;&gt;&#39;,
+                width: 700,
+                height: 400
+        });
+        e.preventDefault();
+    });
+
+    $(&#39;a#popup-online&#39;).click(function(e){
+        console.log($(this).data(&#39;path&#39;));
+        var path = $(this).data(&#39;path&#39;) + &#39;components/com_jw_lookup/assets/img/invoices/&#39; + self.ordertype + &#39;.png&#39;;
+        modal.open({
+            content: &#39;&lt;img src=&quot;&#39; + path + &#39;&quot; width=&quot;100%&quot;&gt;&#39;,
+            width: 700,
+            height: 400
+        });
+        e.preventDefault();
+    });
+
+    // Input mask
+    $(&#39;input[name=&quot;ordernum&quot;]&#39;).keyup(function() {
+        $(&#39;input[name=&quot;ordernum&quot;]&#39;).removeClass(&#39;error&#39;);
+        var start = this.selectionStart,
+            end = this.selectionEnd;
+        if (event.keyCode == 8 || event.keyCode == 46 || event.keyCode == 37 || event.keyCode == 39) return false;
+        if(self.ordertype === &#39;store&#39;) {
+            var value = $(this).val();
+            if (value.length &gt; 4) {
+                value = value.replace(&#39;-&#39;, &#39;&#39;);
+                $(this).val(value.substring(0,4) + &#39;-&#39; + value.slice(4));
+            } 
+            if(start === 5){
+                start++;
+                end++;
+            }
+        }
+        this.setSelectionRange(start, end);
+    });
+}
+
+self.showResult = function(result){
+    $(&#39;.lookup-step[data-step=2]&#39;).hide();
+    $(&#39;.lookup-step[data-step=3]&#39;).show();
+
+    $(&#39;#lookup-result .ordernum&#39;).html(result.ordernum);
+    $(&#39;#lookup-result #recdate&#39;).html(result.recdate);
+    $(&#39;#lookup-result #estdate&#39;).html(result.estdate);
+    $(&#39;#lookup-result #lastupdate&#39;).html(result.lastupdate);
+
+    for(i = 0; i &lt; (result.step); i++) {
+        var item = $(&#39;#lookup-result li:nth-child(&#39;+ i +&#39;)&#39;);
+        item.addClass(&#39;success&#39;);
+        item.children(&#39;.check&#39;).css(&#39;display&#39;, &#39;inline-block&#39;);
+    }
+
+    $(&#39;#lookup-result li:nth-child(&#39;+ result.step +&#39;)&#39;).addClass(&#39;current&#39;);
+    if(result.step &gt; 5){
+        $(&#39;#lookup-result li:nth-child(5) h5&#39;).html(&#39;Shipped Order&#39;);
+    } else {
+        $(&#39;#lookup-result li:nth-child(5) h5&#39;).html(&#39;Shipping Order&#39;);
+    }
+
+    switch(result.extra) {
+        case &#39;partial&#39;:
+            $(&#39;#lookup-extra&#39;).html(&#39;&lt;p&gt;* One or more of your items have shipped. Please contact customer service for information about the remaining items in your order: &#39; + self.phones[self.ordertype] + &#39;&lt;/p&gt;&#39;);
+            break;
+        case &#39;split&#39;:
+        case &#39;cancel&#39;:
+            $(&#39;#lookup-extra&#39;).html(&#39;&lt;p&gt;* Please contact customer service regarding your order.&lt;br&gt; We apologize for any inconvenience. &lt;br&gt;&lt;b&gt;Please Contact: &#39; + self.phones[self.ordertype] + &#39;&lt;/b&gt;&lt;/p&gt;&#39;);
+            break;
+        default:
+            $(&#39;#lookup-extra&#39;).html(&#39;&#39;);
+    }
+}
+
+self.showNoResult = function(){
+    $(&#39;#errormsg&#39;).html(&#39;Your order could not be found. Please re-enter the order number as it appears on the receipt or in the confirmation email.&#39;).show();
+}
+
+self.showFail = function(){
+    $(&#39;#errormsg&#39;).html(&#39;Please contact customer service regarding your order.&lt;br&gt; We apologize for any inconvenience. &lt;br&gt;&lt;b&gt;Please Contact: &#39; + self.phones[self.ordertype] + &#39;&lt;/b&gt;&#39;).show();
+}
+
+self.validateStep = function(step){
+    var isValid = true;
+    switch(step){
+        case 1:
+            if(!$(&#39;input[name=&quot;ordertype&quot;]&#39;).is(&#39;:checked&#39;)){
+                $(&#39;#errormsg&#39;).html(&#39;Please choose an order type.&#39;).show();
+                isValid = false;
+            }
+            break;
+        case 2:
+            var value = $(&#39;input[name=&quot;ordernum&quot;]&#39;).val().replace(&#39;-&#39;, &#39;&#39;);
+            if(value == &#39;&#39;){
+                $(&#39;#errormsg&#39;).html(&#39;Please input your order number.&#39;).show();
+                $(&#39;input[name=&quot;ordernum&quot;]&#39;).addClass(&#39;error&#39;);
+                isValid = false;
+            } else if(self.ordertype == &#39;store&#39;) {
+                //var trim = value.replace(&#39;-&#39;, &#39;&#39;);
+                if(isNaN(value)){
+                    $(&#39;#errormsg&#39;).html(&#39;Your order number should only contain numbers.&#39;).show();
+                    $(&#39;input[name=&quot;ordernum&quot;]&#39;).addClass(&#39;error&#39;);
+                    isValid = false;
+                } else if(value.length &lt;= 4){
+                    $(&#39;#errormsg&#39;).html(&#39;Please verify your order number length.&#39;).show();
+                    $(&#39;input[name=&quot;ordernum&quot;]&#39;).addClass(&#39;error&#39;);
+                    isValid = false;
+                }
+            } else if(self.ordertype == &#39;online&#39;) {
+                var first = value.charAt(0).toUpperCase();
+                if(first != &#39;W&#39; &amp;&amp; first != &#39;C&#39;){
+                    $(&#39;#errormsg&#39;).html(&#39;Your order number should begin with a C or W.&#39;).show();
+                    $(&#39;input[name=&quot;ordernum&quot;]&#39;).addClass(&#39;error&#39;);
+                    isValid = false;
+                } else if(value.length != 10){
+                    $(&#39;#errormsg&#39;).html(&#39;Your order number should be 10 characters long.&#39;).show();
+                    $(&#39;input[name=&quot;ordernum&quot;]&#39;).addClass(&#39;error&#39;);
+                    isValid = false;
+                }
+            }
+            if(isValid) {
+                $(&#39;input[name=&quot;ordernum&quot;]&#39;).removeClass(&#39;error&#39;);
+            }
+            break;
+    }
+    if(isValid) $(&#39;#errormsg&#39;).html(&#39;&#39;).hide();
+    return isValid;
+}</code></pre>
+<p>}</p>
+<p>var modal = (function(){
+    var 
+    method = {},
+    $overlay,
+    $modal,
+    $content,
+    $close;</p>
+<pre><code>// Center the modal in the viewport
+method.center = function () {
+    var top, left;
+
+    top = Math.max($(window).height() - $modal.outerHeight(), 0) / 2;
+    left = Math.max($(window).width() - $modal.outerWidth(), 0) / 2;
+
+    $modal.css({
+        top:top + $(window).scrollTop(), 
+        left:left + $(window).scrollLeft()
+    });
+};
+
+// Open the modal
+method.open = function (settings) {
+    $content.empty().append(settings.content);
+
+    $modal.css({
+        width: settings.width || &#39;auto&#39;, 
+        height: settings.height || &#39;auto&#39;
+    });
+
+    method.center();
+    $(window).bind(&#39;resize.modal&#39;, method.center);
+    $modal.show();
+    $overlay.show();
+};
+
+// Close the modal
+method.close = function () {
+    $modal.hide();
+    $overlay.hide();
+    $content.empty();
+    $(window).unbind(&#39;resize.modal&#39;);
+};
+
+// Generate the HTML and add it to the document
+$overlay = $(&#39;&lt;div class=&quot;com_jw_lookup hopup overlay&quot;&gt;&lt;/div&gt;&#39;);
+$modal = $(&#39;&lt;div class=&quot;com_jw_lookup hopup main&quot;&gt;&lt;/div&gt;&#39;);
+$content = $(&#39;&lt;div class=&quot;com_jw_lookup hopup content&quot;&gt;&lt;/div&gt;&#39;);
+$close = $(&#39;&lt;a class=&quot;com_jw_lookup hopup close&quot; href=&quot;#&quot;&gt;close&lt;/a&gt;&#39;);
+
+$modal.hide();
+$overlay.hide();
+$modal.append($content, $close);
+
+$(document).ready(function(){
+    $(&#39;body&#39;).append($overlay, $modal);                        
+});
+
+$close.click(function(e){
+    e.preventDefault();
+    method.close();
+});
+
+return method;</code></pre>
+<p>}());</p>
+
+			
+
+		</div>
+
+		<div id="footer">
+			<div class="row">
+				<div id="built_with_title" class="medium-8 columns text-right hide-for-small">
+					This site is proudly built with:
+				</div>
+				<div id="built_with_title_small" class="large-12 columns text-right show-for-small">
+					This site is proudly built with::
+				</div>
+				<div id="built_with" class="medium-4 columns pull-right">
+					<div class="icon-bar four-up">
+						<a href="http://harpjs.com/" target="_blank" class="item has-tip tip-top" data-tooltip aria-haspopup="true" title="Harp Web Server">
+							<img src="/assets/img/vendor/harp.svg">
+						</a>
+						<a href="http://foundation.zurb.com/" target="_blank" class="item has-tip tip-top" data-tooltip aria-haspopup="true" title="Foundation Zurb 5">
+							<img src="/assets/img/vendor/yeti.svg">
+						</a>
+						<a href="http://bower.io/" target="_blank" class="item has-tip tip-top" data-tooltip aria-haspopup="true" title="Bower Package Manager">
+							<img src="/assets/img/vendor/bower.svg">
+						</a>
+						<a href="http://gruntjs.com/" target="_blank" class="item has-tip tip-top" data-tooltip aria-haspopup="true" title="Grunt Task Runner">
+							<img src="/assets/img/vendor/grunt.png">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="/assets/js/vendor/jquery.min.js"></script>
+		<script src="/assets/js/vendor/foundation.min.js"></script>
+		<script src="/assets/js/vendor/slick.min.js"></script>
+		<script src="/assets/js/vendor/prism/prism-core.min.js"></script>
+		<script src="/assets/js/vendor/prism/prism-php.min.js"></script>
+		<script src="/assets/js/vendor/prism/prism-javascript.min.js"></script>
+		<script src="/assets/js/app.js"></script>
+	</body>
+</html>

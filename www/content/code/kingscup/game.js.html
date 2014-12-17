@@ -42,13 +42,13 @@
 				</ul>
 
 				<ul class="left">
-					<li class="<% if(current.path[0] == 'blog' || (typeof(category) != 'undefined' && category == 'blog')) { %>active<% } %>">
+					<li class="">
 						<a href="/blog">Blog</a>
 					</li>
-					<li class="<% if(current.path[0] == 'projects' || (typeof(category) != 'undefined' && category == 'projects')) { %>active<% } %>">
+					<li class="">
 						<a href="/projects">Projects</a>
 					</li>
-					<li class="<% if(current.path[0] == 'code' || (typeof(category) != 'undefined' && category == 'code')) { %>active<% } %>">
+					<li class="">
 						<a href="/code">Code</a>
 					</li>
 				</ul>
@@ -94,11 +94,49 @@
 
 		<div id="page">
 			
-			<% if(current.path[0] == "articles" && (typeof(category) != 'undefined')) { %>
-				<%- partial("articles/_template") %>
-			<% } else { %>
-				<%- yield %>
-			<% } %>
+			
+				<p>$(document).foundation();</p>
+<p>$(document).ready(function() {</p>
+<pre><code>var socket = io.connect(&#39;http://game.dev:3000&#39;);
+
+var players = [];
+var player = {};
+var playerCount;
+var currentPlayer;
+
+socket.on(&#39;getPlayer&#39;, function() {
+    player.name = prompt(&quot;Please enter your name:&quot;,&quot;Yupi&quot;);
+    $(&#39;#playerName&#39;).html(player.name);
+    socket.emit(&#39;setPlayer&#39;, player);
+});
+
+socket.on(&#39;updatePlayerCount&#39;, function (count) {
+    playerCount = count;
+    $(&#39;#playerCount&#39;).html(playerCount);
+});
+
+$(&#39;#newGame&#39;).click(function(){
+    socket.emit(&#39;newGame&#39;);
+});
+
+socket.on(&#39;newTurn&#39;, function (player) {
+    console.log(&#39;new players turn: &#39; + player.name);
+    $(&#39;#currentTurn&#39;).html(player.name);
+});
+
+socket.on(&#39;yourTurn&#39;, function (card) {
+    $(&#39;#currentTurn&#39;).html(&#39;YOUR TURN, &#39; + player.name);
+    $(&#39;#card&#39;).on(&#39;click&#39;, function(){
+        $(&#39;#card&#39;).attr(&#39;src&#39;, &#39;/images/cards/&#39; + card.path);
+        $(&#39;#cardName&#39;).html(card.name);
+        $(&#39;#cardRule&#39;).html(card.rule);
+        $(&#39;#card&#39;).off(&#39;click&#39;);
+        socket.emit(&#39;turnDone&#39;);
+    });
+});</code></pre>
+<p>});</p>
+
+			
 
 		</div>
 

@@ -1,0 +1,550 @@
+<!doctype html>
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Alex Crawford</title>
+		<link rel="stylesheet" href="/assets/css/app.css" />
+		<link rel="stylesheet" href="/assets/css/vendor/prism.css" />
+		<link rel="stylesheet" href="/assets/css/vendor/prism-okaidia.css" />
+		<link rel="stylesheet" href="/assets/css/override.css" />
+	    <script src="/assets/js/vendor/modernizr.js"></script>
+	</head>
+	<body>
+		<nav id="topnav" class="top-bar" data-topbar role="navigation">
+			<ul class="title-area">
+				<li class="name">
+					<h1><a href="/">Alex Crawford</a></h1>
+				</li>
+				<li class="toggle-topbar menu-icon">
+					<a href="#"><span>Menu</span></a>
+				</li>
+			</ul>
+
+			<section class="top-bar-section">
+
+				<ul class="right contact_icons hide-for-small">
+					<li>
+						<a href="#"><i class="fa fa-twitter fa-2x"></i></a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-github fa-2x"></i></a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-steam fa-2x fa-spin"></i></a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-linkedin fa-2x"></i></a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-facebook fa-2x"></i></a>
+					</li>
+				</ul>
+
+				<ul class="left">
+					<li class="">
+						<a href="/blog">Blog</a>
+					</li>
+					<li class="">
+						<a href="/projects">Projects</a>
+					</li>
+					<li class="">
+						<a href="/code">Code</a>
+					</li>
+				</ul>
+
+				<ul class="right mobile_contact_icons show-for-small">
+					<div class="icon-bar five-up">
+						<a href="#" class="item"><i class="fa fa-twitter fa-2x"></i></a>
+						<a href="#" class="item"><i class="fa fa-github fa-2x"></i></a>
+						<a href="#" class="item"><i class="fa fa-steam fa-2x fa-spin"></i></a>
+						<a href="#" class="item"><i class="fa fa-linkedin fa-2x"></i></a>
+						<a href="#" class="item"><i class="fa fa-facebook fa-2x"></i></a>
+					</div>
+					<!-- That was ugly.
+					<form>
+						<div class="row">
+						<br>
+							<div class="large-12 columns">
+								<textarea placeholder="Message"></textarea>
+							</div>
+						</div>
+						<div class="row">
+							<div class="small-8 columns">
+								<div class="row">
+									<div class="small-2 columns">
+										<span class="label">From:</span>
+									</div>
+									<div class="small-10 columns">
+										<input type="text" id="right-label" placeholder="Email address">
+									</div>
+								</div>
+							</div>
+							<div class="small-4 columns">
+								<button class="button expand success"><i class="fa fa-send-o"></i> Contact Me!</button>
+							</div>
+						</div>
+					</form>
+					<hr>
+					-->
+				</ul>
+
+			</section>
+		</nav>
+
+		<div id="page">
+			
+			
+				<p>var findstore;
+var findstore.results;
+var findstore.map;
+var findstore.bounds;
+var findstore.infoWindow;
+var findstore.markers = [];
+var findstore.mappings = [];
+var findstore.dirMap;
+var findstore.dirBounds;
+var findstore.dirDisplay;
+var findstore.dirService;
+var findstore.dirMarkers = [];
+var findstore.uriVars = {};</p>
+<p>$(document).ready(function() {
+    // limit loading findstore map
+    if ($(&#39;#findstore-map&#39;).length != 0) {
+        findstore.bounds = new google.maps.LatLngBounds();
+        findstore.infoWindow = new google.maps.InfoWindow();
+        findstore.map = new google.maps.Map(document.getElementById(&quot;findstore-map&quot;), {
+            center: new google.maps.LatLng(0, 0),
+            zoom: 2,
+            mapTypeId: &#39;roadmap&#39;,
+            mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU}
+        });
+        // get URI parameters
+        var uriSegments = window.location.href.replace(/[?&amp;]+([^=&amp;]+)=([^&amp;]*)/gi, function(m,key,value) {
+            findstore.uriVars[key] = value;
+        });
+        if (typeof(findstore.uriVars[&quot;uri&quot;]) !== &#39;undefined&#39;){
+            initCheckbox(findstore.uriVars[&quot;uri&quot;]);
+        }
+    }</p>
+<pre><code>// limit loading directions map
+if ($(&#39;#directions-map&#39;).length != 0) {
+    findstore.dirBounds = new google.maps.LatLngBounds();
+    findstore.dirService = new google.maps.DirectionsService();
+    findstore.dirDisplay = new google.maps.DirectionsRenderer();
+    findstore.dirMap = new google.maps.Map(document.getElementById(&quot;directions-map&quot;), {
+        center: new google.maps.LatLng(0, 0),
+        zoom: 2,
+        mapTypeId: &#39;roadmap&#39;,
+        mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU}
+    });
+    findstore.dirDisplay.setMap(findstore.dirMap);
+    initDirections(dirAddress, dirPosition);
+}
+
+// IE indexOf workaround
+// https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Array/indexOf
+if (!Array.prototype.indexOf) {
+    Array.prototype.indexOf = function (searchElement /*, fromIndex */ ) {
+        &quot;use strict&quot;;
+        if (this == null) {
+            throw new TypeError();
+        }
+        var t = Object(this);
+        var len = t.length &gt;&gt;&gt; 0;
+        if (len === 0) {
+            return -1;
+        }
+        var n = 0;
+        if (arguments.length &gt; 1) {
+            n = Number(arguments[1]);
+            if (n != n) { // shortcut for verifying if it&#39;s NaN
+                n = 0;
+            } else if (n != 0 &amp;&amp; n != Infinity &amp;&amp; n != -Infinity) {
+                n = (n &gt; 0 || -1) * Math.floor(Math.abs(n));
+            }
+        }
+        if (n &gt;= len) {
+            return -1;
+        }
+        var k = n &gt;= 0 ? n : Math.max(len - Math.abs(n), 0);
+        for (; k &lt; len; k++) {
+            if (k in t &amp;&amp; t[k] === searchElement) {
+                return k;
+            }
+        }
+        return -1;
+    }
+}</code></pre>
+<p>});</p>
+<p>/<em> Click Events </em>/</p>
+<p>// Submit form
+$(&#39;#findstore-submit&#39;).click(function() {
+    $(&#39;#findstore-search&#39;).submit();
+});</p>
+<p>$(&#39;#findstore-search&#39;).submit(function(e) {
+    e.preventDefault();
+    $(&#39;#findstore-right-middle .message&#39;).remove();
+    var form = this;
+    validate(form).done(function(data) {
+        findstore.results = data;
+        initMappings();
+    }).fail(function() {
+        clearMap();
+        clearResults();
+    });
+});</p>
+<p>// Loading icon for any AJAX
+$(&quot;.findstore-loading&quot;).bind(&quot;ajaxStart&quot;, function(){
+    $(this).show();
+}).bind(&quot;ajaxComplete&quot;, function(){
+    $(this).hide();
+});</p>
+<p>// Show more results click event
+$(&#39;#findstore-results .more-results&#39;).live(&quot;click&quot;, function(e) {
+    var order = $(this).closest(&#39;tr&#39;).attr(&#39;data-order&#39;);
+    var group = $(this).closest(&#39;tr&#39;).attr(&#39;data-group&#39;);
+    findstore.mappings[order].open = true;
+    showMore(order, group);
+});</p>
+<p>// Hide more results click event
+$(&#39;#findstore-results .hide-results&#39;).live(&quot;click&quot;, function(e) {
+    var order = $(this).closest(&#39;tr&#39;).attr(&#39;data-order&#39;);
+    var group = $(this).closest(&#39;tr&#39;).attr(&#39;data-group&#39;);
+    findstore.mappings[order].open = false;
+    hideMore($(this).closest(&#39;tr&#39;).attr(&#39;data-order&#39;), $(this).closest(&#39;tr&#39;).attr(&#39;data-group&#39;));
+});</p>
+<p>$(&#39;#findstore-type-filters :input&#39;).live(&quot;click&quot;, function(e) {
+    initMappings();
+});</p>
+<p>$(&#39;form[name=&quot;getDirections&quot;] #btnGetDirections&#39;).live(&quot;click&quot;, function(e) {
+    e.preventDefault();
+    var start = $(&#39;form[name=&quot;getDirections&quot;] input[name=&quot;fromAddress&quot;]&#39;).val();
+    var end = $(&#39;form[name=&quot;getDirections&quot;] input[name=&quot;toAddress&quot;]&#39;).val();
+    calcRoute(start, end);
+});</p>
+<p>/<em> Functions </em>/</p>
+<p>// retreive the data
+function validate(form){
+    var valid = true;
+    findstore.results = null;
+    var response = $.Deferred();</p>
+<pre><code>if (valid === true) {
+    var selZip = $(&#39;#findstore-zip&#39;).val();
+    var selRadius = $(&#39;#findstore-radius&#39;).val();
+    var selFilters = new Array();
+    $(&#39;input[name=findstore-filters]:checked&#39;).each(function(key,val){
+        selFilters.push($(val).val());
+    });
+    var selModel = findstore.uriVars[&#39;model&#39;];
+
+    $.ajax({
+        url: &#39;findastore?task=findstore.search&amp;format=raw&#39;,
+        data: { selZip: selZip, selFilters: selFilters, selRadius: selRadius, selModel: selModel }
+    }).done(function(data) {
+        if ( data.length &gt; 0 ) {
+            response.resolve(data);
+        } else {
+            response.reject();
+        }
+    }).fail(function() {
+        response.reject();
+    });
+} else {
+    response.reject();
+}
+
+return response.promise();</code></pre>
+<p>}</p>
+<p>// preselect checkboxes
+function initCheckbox(uri) {
+    var segments = uri.split(&quot;/&quot;);
+    $.each(window.filters, function(f, filter){
+        $.each(filter.mappings, function(m, mapping){
+            if ($.isEmptyObject(mapping.uris)) {
+                var matchAll = false;
+            } else {
+                var matchAll = true;
+                var uris = $.parseJSON(mapping.uris);
+                $.each(uris, function(u, uriString){
+                    var uriArray = uriString.split(&#39;,&#39;);
+                    $.each(uriArray, function(u, uri){
+                        uriTrimmed = uri.replace(/\s/g, &#39;&#39;);
+                        if (segments.indexOf(uriTrimmed) != -1) {
+                        } else {
+                            matchAll = false;
+                        }
+                    });
+                });
+            }
+            if(matchAll){
+                $(&#39;#findstore-filter-&#39; + mapping.id).attr(&#39;checked&#39;, &#39;checked&#39;);
+            }
+        });
+    });
+}</p>
+<p>// prepare the directions iframe view
+function initDirections(address, position){
+    $(&#39;#findstore-direction-steps&#39;).empty();
+    $(&#39;form[name=&quot;getDirections&quot;] input[name=&quot;toAddress&quot;]&#39;).val(address);</p>
+<pre><code>for (i = 0; i &lt; findstore.dirMarkers.length; i++) {
+    findstore.dirMarkers[i].setMap(null);
+}
+findstore.dirMarkers.length = 0;
+findstore.dirDisplay.setMap(null);
+
+findstore.dirBounds = new google.maps.LatLngBounds();
+
+position = position.replace(/[()]/g,&#39;&#39;);
+position = position.split(&#39;,&#39;);
+
+var marker = new google.maps.Marker({
+    position: new google.maps.LatLng(position[0], position[1]),
+    map: findstore.dirMap,
+    icon: &#39;http://maps.google.com/mapfiles/ms/micons/green-dot.png&#39;
+});
+
+findstore.dirMarkers.push(marker);
+findstore.dirBounds.extend(marker.position);
+findstore.dirMap.fitBounds(findstore.dirBounds);
+findstore.dirMap.setZoom(14);</code></pre>
+<p>}</p>
+<p>function calcRoute(start, end) {
+    var request = {
+        origin:start,
+        destination:end,
+        travelMode: google.maps.TravelMode.DRIVING
+    };
+    findstore.dirService.route(request, function(response, status) {
+        if (status == google.maps.DirectionsStatus.OK) {
+            findstore.dirDisplay.setDirections(response);
+            findstore.dirDisplay.setMap(findstore.dirMap);
+            showSteps(response);
+        }<br>    });
+}</p>
+<p>function showSteps(directionResult) {
+    $(&#39;#findstore-direction-steps&#39;).empty();</p>
+<pre><code>for (i = 0; i &lt; findstore.dirMarkers.length; i++) {
+    findstore.dirMarkers[i].setMap(null);
+}
+findstore.dirMarkers.length = 0;
+
+var route = directionResult.routes[0].legs[0];
+
+$(&#39;#findstore-direction-steps&#39;).append(
+    &#39;&lt;h5&gt;&#39; + route.start_address + &#39;&lt;/h5&gt;&#39;    
+);
+
+for (var i = 0; i &lt; route.steps.length; i++) {
+    $(&#39;#findstore-direction-steps&#39;).append(
+        &#39;&lt;li class=&quot;step&quot;&gt;&lt;span&gt;&#39; + (i + 1) + &#39;.&lt;/span&gt;&lt;div class=&quot;detail&quot;&gt;&#39; + route.steps[i].instructions + &#39;&lt;/div&gt;&lt;/li&gt;&#39;
+    );
+}
+
+$(&#39;#findstore-direction-steps&#39;).append(
+    &#39;&lt;h5&gt;&#39; + route.end_address + &#39;&lt;/h5&gt;&#39;    
+);</code></pre>
+<p>}</p>
+<p>function initMappings(){
+    findstore.mappings.length = 0;
+    $.each(findstore.results, function(i, result) {
+        var latlng = new google.maps.LatLng(
+            result[0].lat,
+            result[0].lon
+        );
+        var marker = new google.maps.Marker({
+            position: latlng
+        })
+        var mapping = {
+            details: result[0],
+            marker: marker,
+            group: i,
+            open: false
+        }
+        if($(result).length &gt; 1) {
+            mapping.children = true;
+        }
+        findstore.mappings.push(mapping);
+    });
+    filterTypes();
+    updateResults();
+}</p>
+<p>function showMore(order, group){
+    $.each(findstore.results[group], function(s, store) {
+        if (s &gt; 0) {
+            var latlng = new google.maps.LatLng(
+                store.lat,
+                store.lon
+            );<br>            var marker = new google.maps.Marker({
+                position: latlng
+            });
+            var mapping = {
+                details: store,
+                marker: marker,
+                group: group,
+                child: true
+            }<br>            findstore.mappings.splice(Number(order) + Number(s), 0, mapping);
+        }
+    });
+    updateResults();
+    var storeCount = findstore.results[group].length - 1;
+    $(&#39;#findstore-results-body tr[data-order=&quot;&#39; + order + &#39;&quot;] .more-results&#39;).replaceWith(
+        &#39;<div class="hide-results">- Hide more stores (&#39; + storeCount + &#39;)</div>&#39;
+    );
+}</p>
+<p>function hideMore(order, group){
+    index = (Number(order) + 1);
+    amount = $(&#39;#findstore-results-body tr[data-group=&quot;&#39; + group + &#39;&quot;]&#39;).length - 1;
+    findstore.mappings.splice(index, amount);
+    updateResults();
+    var storeCount = findstore.results[group].length - 1;
+    $(&#39;#findstore-results-body tr[data-order=&quot;&#39; + order + &#39;&quot;] .hide-results&#39;).replaceWith(
+        &#39;<div class="more-results">+ Show more stores (&#39; + storeCount + &#39;)</div>&#39;
+    );
+}</p>
+<p>function filterTypes(){
+    var filterTypes = [];
+    if ($(&quot;input[name=&#39;type-filter[]&#39;]:checked&quot;).length &lt; 1) {
+        filterTypes = [&#39;Home Center&#39;, &#39;Window and Door Store&#39;, &#39;Lumber Yard&#39;]
+    } else {
+        $.each($(&quot;input[name=&#39;type-filter[]&#39;]:checked&quot;), function() {;
+            filterTypes.push($(this).val());
+        });
+    }
+    var spliceMappings = [];
+    $.each(findstore.mappings, function(i, mapping) {
+        store = mapping.details;
+        match = filterTypes.indexOf(store.type);
+        if (match === -1) {
+            spliceMappings.push(i);
+        }
+    });
+    $.each(spliceMappings.reverse(), function(i, index) {
+        findstore.mappings.splice(index, 1);
+    });
+}</p>
+<p>function updateResults(){
+    $(&#39;#findstore-right-bottom&#39;).show();
+    $(&#39;#findstore-right-middle .message&#39;).remove();
+    $(&#39;#findstore-results-body tr&#39;).not(&#39;.first&#39;).remove();
+    $.each(findstore.mappings, function(i, mapping) {
+        var store = mapping.details;
+        if (i%2 == 0) { var oddeven = &#39;even&#39; } else { var oddeven = &#39;odd&#39; }
+        var clone = $(&#39;#findstore-results-body tr.first&#39;).clone();
+        clone.show();
+        clone.removeClass(&#39;first&#39;).addClass(oddeven).attr(&#39;data-order&#39;, i).attr(&#39;data-group&#39;, mapping.group);
+        clone.find(&#39;.marker img&#39;).attr(&#39;src&#39;, &#39;<a href="http://chart.apis.google.com/chart?chst=d_map_spin&amp;chld=.75|0|CAD7FC|16|b|">http://chart.apis.google.com/chart?chst=d_map_spin&amp;chld=.75|0|CAD7FC|16|b|</a>&#39; + (i + 1));<br>        clone.find(&#39;.details h5&#39;).html(store.name);
+        clone.find(&#39;.details h6&#39;).html(store.type);
+        clone.find(&#39;.details p&#39;).html(store.address + &#39;<br>&#39; + store.city + &#39;, &#39; + store.state + &#39; &#39; + store.zip + &#39;<br>&#39; + store.phone);
+        clone.find(&#39;.details span&#39;).html(store.distance + &#39; mi&#39;);
+        clone.find(&#39;.directions a&#39;).attr(&#39;href&#39;, &#39;index.php?option=com_jw_findstore&amp;layout=directions&amp;address=&#39; + store.address + &#39; &#39; + store.city + &#39;, &#39; + store.state + &#39; &#39; + store.zip + &#39;&amp;position=&#39; + mapping.marker.position + &#39;&amp;tmpl=hopup&#39;);
+        clone.appendTo($(&#39;#findstore-results-body&#39;));</p>
+<pre><code>    $.each(store.products, function(p, product) {
+        clone.find(&#39;td[data-category=&#39;+product.category+&#39;]&#39;).append(&#39;&lt;li data-match=&quot;&#39;+product.match+&#39;&quot;&gt;&#39; + product.name + &#39;&lt;/li&gt;&#39;);
+    });
+
+    if (mapping.children) {
+        var storeCount = findstore.results[mapping.group].length -1;
+        if (mapping.open){
+            clone.find(&#39;td.store-info&#39;).append(&#39;&lt;div class=&quot;hide-results&quot;&gt;- Hide more stores (&#39; + storeCount + &#39;)&lt;/div&gt;&#39;);
+        } else {
+            clone.find(&#39;td.store-info&#39;).append(&#39;&lt;div class=&quot;more-results&quot;&gt;+ Show more results (&#39; + storeCount + &#39;)&lt;/div&gt;&#39;);
+        }
+    }
+
+    if (mapping.child) {
+        clone.addClass(&#39;child&#39;);
+    }
+});
+
+if (findstore.mappings.length &gt; 0){
+    updateMap();
+} else {
+    clearMap();
+    clearResults();
+}
+
+$(&quot;.iframe&quot;).colorbox({iframe:true, width:&quot;840px&quot;, height:&quot;600px&quot;, scrolling: false});</code></pre>
+<p>}</p>
+<p>function updateMap(){
+    clearMap();
+    findstore.bounds = new google.maps.LatLngBounds();
+    $.each(findstore.mappings, function(i, mapping) {
+        var store = mapping.details;
+        var overlay = 
+            &#39;<div class="details">&#39; +
+                &#39;<h4>&#39; + store.name + &#39;</h4>&#39; +
+                &#39;<h6>&#39; + store.type + &#39;</h6>&#39; +
+                &#39;<p>&#39; + store.address + &#39;</p>&#39; +
+                &#39;<p>&#39; + store.city + &#39;, &#39; + store.state + &#39; &#39; + store.zip + &#39;</p>&#39; +
+                &#39;<p>&#39; + store.phone + &#39;</p>&#39; +
+                &#39;<span>&#39; + store.distance + &#39; mi</span>&#39; +
+            &#39;</div>&#39;;
+        mapping.marker.setIcon(&#39;<a href="http://chart.apis.google.com/chart?chst=d_map_spin&amp;chld=.75|0|CAD7FC|16|b|">http://chart.apis.google.com/chart?chst=d_map_spin&amp;chld=.75|0|CAD7FC|16|b|</a>&#39; + ( i + 1 ));
+        mapping.marker.setMap(map);
+        google.maps.event.addListener(mapping.marker, &#39;click&#39;, function() {
+            findstore.infoWindow.close();
+            infoWindow.setContent(overlay);
+              map.setZoom(10);
+              map.panTo(mapping.marker.getPosition());
+              findstore.infoWindow.open(map, mapping.marker);
+        });</p>
+<pre><code>    findstore.bounds.extend(mapping.marker.position);
+    findstore.markers.push(mapping.marker);
+});
+
+map.fitBounds(findstore.bounds);</code></pre>
+<p>}</p>
+<p>function clearResults(){
+    $(&#39;#findstore-results-body tr&#39;).not(&#39;.first&#39;).remove();
+    $(&#39;#findstore-right-bottom&#39;).hide();
+    $(&#39;#findstore-right-middle .message&#39;).remove();
+    $(&#39;#findstore-right-middle&#39;).append(&#39;<span class="message">There are no locations that match your criteria. Please try a different search.</span>&#39;);
+}</p>
+<p>function clearMap(){
+    for (var i = 0; i &lt; findstore.markers.length; i++) {
+        findstore.markers[i].setMap(null);
+    }
+    findstore.markers.length = 0;
+}</p>
+
+			
+
+		</div>
+
+		<div id="footer">
+			<div class="row">
+				<div id="built_with_title" class="medium-8 columns text-right hide-for-small">
+					This site is proudly built with:
+				</div>
+				<div id="built_with_title_small" class="large-12 columns text-right show-for-small">
+					This site is proudly built with::
+				</div>
+				<div id="built_with" class="medium-4 columns pull-right">
+					<div class="icon-bar four-up">
+						<a href="http://harpjs.com/" target="_blank" class="item has-tip tip-top" data-tooltip aria-haspopup="true" title="Harp Web Server">
+							<img src="/assets/img/vendor/harp.svg">
+						</a>
+						<a href="http://foundation.zurb.com/" target="_blank" class="item has-tip tip-top" data-tooltip aria-haspopup="true" title="Foundation Zurb 5">
+							<img src="/assets/img/vendor/yeti.svg">
+						</a>
+						<a href="http://bower.io/" target="_blank" class="item has-tip tip-top" data-tooltip aria-haspopup="true" title="Bower Package Manager">
+							<img src="/assets/img/vendor/bower.svg">
+						</a>
+						<a href="http://gruntjs.com/" target="_blank" class="item has-tip tip-top" data-tooltip aria-haspopup="true" title="Grunt Task Runner">
+							<img src="/assets/img/vendor/grunt.png">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="/assets/js/vendor/jquery.min.js"></script>
+		<script src="/assets/js/vendor/foundation.min.js"></script>
+		<script src="/assets/js/vendor/slick.min.js"></script>
+		<script src="/assets/js/vendor/prism/prism-core.min.js"></script>
+		<script src="/assets/js/vendor/prism/prism-php.min.js"></script>
+		<script src="/assets/js/vendor/prism/prism-javascript.min.js"></script>
+		<script src="/assets/js/app.js"></script>
+	</body>
+</html>

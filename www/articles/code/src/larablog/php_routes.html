@@ -42,13 +42,13 @@
 				</ul>
 
 				<ul class="left">
-					<li class="<% if(current.path[0] == 'blog' || (typeof(category) != 'undefined' && category == 'blog')) { %>active<% } %>">
+					<li class="">
 						<a href="/blog">Blog</a>
 					</li>
-					<li class="<% if(current.path[0] == 'projects' || (typeof(category) != 'undefined' && category == 'projects')) { %>active<% } %>">
+					<li class="">
 						<a href="/projects">Projects</a>
 					</li>
-					<li class="<% if(current.path[0] == 'code' || (typeof(category) != 'undefined' && category == 'code')) { %>active<% } %>">
+					<li class="">
 						<a href="/code">Code</a>
 					</li>
 				</ul>
@@ -94,11 +94,44 @@
 
 		<div id="page">
 			
-			<% if(current.path[0] == "articles" && (typeof(category) != 'undefined')) { %>
-				<%- partial("articles/_template") %>
-			<% } else { %>
-				<%- yield %>
-			<% } %>
+			
+				<pre><code class="language-php">&lt;?php
+
+Route::group([&#39;before&#39; =&gt; &#39;auth&#39;], function(){
+    Route::group([&#39;prefix&#39; =&gt; &#39;admin&#39;], function()
+    {
+        Route::get(&#39;articles&#39;, [&#39;as&#39; =&gt; &#39;admin_articles&#39;, &#39;uses&#39; =&gt; &#39;AdminArticleController@getIndex&#39;]);
+        Route::get(&#39;articles/create&#39;, [&#39;as&#39; =&gt; &#39;create_article&#39;, &#39;uses&#39; =&gt; &#39;AdminArticleController@getCreate&#39;]);
+        Route::get(&#39;articles/{alias}&#39;, [&#39;as&#39; =&gt; &#39;edit_article&#39;, &#39;uses&#39; =&gt; &#39;AdminArticleController@getUpdate&#39;]);
+        Route::get(&#39;/&#39;, [&#39;as&#39; =&gt; &#39;admin&#39;, function()
+        {
+            return View::make(&#39;admin/index&#39;);
+        }]);
+        Route::group([&#39;before&#39; =&gt; &#39;csrf&#39;], function(){
+            Route::post(&#39;articles/create&#39;, [&#39;uses&#39; =&gt; &#39;AdminArticleController@postCreate&#39;]);
+        });
+    });
+});
+
+Route::group([&#39;before&#39; =&gt; &#39;guest&#39;], function(){
+    Route::get(&#39;login&#39;, [&#39;as&#39; =&gt; &#39;login&#39;, &#39;uses&#39; =&gt; &#39;AuthController@getLogin&#39;]);
+
+    Route::group([&#39;before&#39; =&gt; &#39;csrf&#39;], function(){
+        Route::post(&#39;login&#39;, [&#39;uses&#39; =&gt; &#39;AuthController@postLogin&#39;]);
+    });
+});
+
+Route::group([&#39;prefix&#39; =&gt; &#39;blog&#39;], function()
+{    
+    Route::get(&#39;/&#39;, [&#39;as&#39; =&gt; &#39;blog&#39;, &#39;uses&#39; =&gt; &#39;BlogController@getIndex&#39;]);
+    Route::get(&#39;/{alias}&#39;, [&#39;as&#39; =&gt; &#39;blog_post&#39;, &#39;uses&#39; =&gt; &#39;BlogController@getPost&#39;]);
+});
+
+Route::get(&#39;logout&#39;, [&#39;as&#39; =&gt; &#39;logout&#39;, &#39;uses&#39; =&gt; &#39;AuthController@getLogout&#39;]);
+
+Route::get(&#39;/&#39;, [&#39;as&#39; =&gt; &#39;home&#39;, &#39;uses&#39; =&gt; &#39;HomeController@getIndex&#39;]);</code></pre>
+
+			
 
 		</div>
 

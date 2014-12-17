@@ -42,13 +42,13 @@
 				</ul>
 
 				<ul class="left">
-					<li class="<% if(current.path[0] == 'blog' || (typeof(category) != 'undefined' && category == 'blog')) { %>active<% } %>">
+					<li class="">
 						<a href="/blog">Blog</a>
 					</li>
-					<li class="<% if(current.path[0] == 'projects' || (typeof(category) != 'undefined' && category == 'projects')) { %>active<% } %>">
+					<li class="active">
 						<a href="/projects">Projects</a>
 					</li>
-					<li class="<% if(current.path[0] == 'code' || (typeof(category) != 'undefined' && category == 'code')) { %>active<% } %>">
+					<li class="">
 						<a href="/code">Code</a>
 					</li>
 				</ul>
@@ -94,11 +94,187 @@
 
 		<div id="page">
 			
-			<% if(current.path[0] == "articles" && (typeof(category) != 'undefined')) { %>
-				<%- partial("articles/_template") %>
-			<% } else { %>
-				<%- yield %>
-			<% } %>
+			
+				<div class="row">
+	
+	<div class="large-8 columns large-pull-right">
+
+		<ul class="breadcrumbs">
+			<li><a href="/">Home</a></li>
+
+			
+				<li class="current"><a href="/projects">Projects</a></li>
+			
+		</ul>
+
+		<h4>Latest Projects</h4>
+
+		
+
+	
+	
+
+	
+	
+
+	<div class="row blog_header">
+		<div class="small-8 columns">
+			<h5><a href="/articles/harp-blog">
+					Alex Crawford
+			</a></h5>
+		</div>
+		<div class="small-4 columns text-right">
+			<small>December 07, 2014</small>
+		</div>
+	</div>
+
+	<div class="row blog_header">
+		<div class="small-8 columns">
+			<p>
+				This open source site, served on Debian with Nginx and Harp, built with the Foundation responsive framework, was my first foray into flat file minimalism. It worked magically.
+			</p>
+		</div>
+
+		<div class="small-4 columns text-right">
+			<a href="/articles/harp-blog" class="button small secondary">See <i class="fa fa-eye"></i> more</a>
+		</div>
+	</div>
+
+	<hr>
+
+
+
+	
+	
+
+	<div class="row blog_header">
+		<div class="small-8 columns">
+			<h5><a href="/articles/jeld-wen">
+					JELD-WEN
+			</a></h5>
+		</div>
+		<div class="small-4 columns text-right">
+			<small>July 07, 2012 - 2015</small>
+		</div>
+	</div>
+
+	<div class="row blog_header">
+		<div class="small-8 columns">
+			<p>
+				Numerous Javascript and PHP MVC components, written in the finest Joomla adherent AJAX fashion.
+			</p>
+		</div>
+
+		<div class="small-4 columns text-right">
+			<a href="/articles/jeld-wen" class="button small secondary">See <i class="fa fa-eye"></i> more</a>
+		</div>
+	</div>
+
+	<hr>
+
+
+
+	
+	
+
+	<div class="row blog_header">
+		<div class="small-8 columns">
+			<h5><a href="/articles/cagehost">
+					CageHost
+			</a></h5>
+		</div>
+		<div class="small-4 columns text-right">
+			<small>March 28, 2011 - 2015</small>
+		</div>
+	</div>
+
+	<div class="row blog_header">
+		<div class="small-8 columns">
+			<p>
+				Automated provisioning and billing for cPanel shared hosting, and virtual servers with dedicated resources.
+			</p>
+		</div>
+
+		<div class="small-4 columns text-right">
+			<a href="/articles/cagehost" class="button small secondary">See <i class="fa fa-eye"></i> more</a>
+		</div>
+	</div>
+
+	<hr>
+
+
+
+	
+	
+
+	<div class="row blog_header">
+		<div class="small-8 columns">
+			<h5><a href="/articles/justmakegames">
+					Just Make Games
+			</a></h5>
+		</div>
+		<div class="small-4 columns text-right">
+			<small>October 10, 2010 - 2015</small>
+		</div>
+	</div>
+
+	<div class="row blog_header">
+		<div class="small-8 columns">
+			<p>
+				What began as a school club became a game development social network with over 2,000 active members and 400,000 YouTube views, with tutorials, reviews, points and prizes.
+			</p>
+		</div>
+
+		<div class="small-4 columns text-right">
+			<a href="/articles/justmakegames" class="button small secondary">See <i class="fa fa-eye"></i> more</a>
+		</div>
+	</div>
+
+	<hr>
+
+
+
+	
+	
+
+	
+	
+
+	<div class="row blog_header">
+		<div class="small-8 columns">
+			<h5><a href="/articles/fbignite">
+					Facebook Ignite
+			</a></h5>
+		</div>
+		<div class="small-4 columns text-right">
+			<small>December 06, 2011</small>
+		</div>
+	</div>
+
+	<div class="row blog_header">
+		<div class="small-8 columns">
+			<p>
+				Design UI and develop protoype for Facebook open source development training courses.
+			</p>
+		</div>
+
+		<div class="small-4 columns text-right">
+			<a href="/articles/fbignite" class="button small secondary">See <i class="fa fa-eye"></i> more</a>
+		</div>
+	</div>
+
+	<hr>
+
+
+		
+	</div>
+
+	<div class="large-4 columns">
+		
+	</div>
+	
+</div>
+			
 
 		</div>
 

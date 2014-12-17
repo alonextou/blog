@@ -42,13 +42,13 @@
 				</ul>
 
 				<ul class="left">
-					<li class="<% if(current.path[0] == 'blog' || (typeof(category) != 'undefined' && category == 'blog')) { %>active<% } %>">
+					<li class="">
 						<a href="/blog">Blog</a>
 					</li>
-					<li class="<% if(current.path[0] == 'projects' || (typeof(category) != 'undefined' && category == 'projects')) { %>active<% } %>">
+					<li class="">
 						<a href="/projects">Projects</a>
 					</li>
-					<li class="<% if(current.path[0] == 'code' || (typeof(category) != 'undefined' && category == 'code')) { %>active<% } %>">
+					<li class="">
 						<a href="/code">Code</a>
 					</li>
 				</ul>
@@ -94,11 +94,101 @@
 
 		<div id="page">
 			
-			<% if(current.path[0] == "articles" && (typeof(category) != 'undefined')) { %>
-				<%- partial("articles/_template") %>
-			<% } else { %>
-				<%- yield %>
-			<% } %>
+			
+				<pre><code class="language-php">&lt;?php
+
+defined(&#39;_JEXEC&#39;) or die(&#39;Restricted access&#39;);
+jimport(&#39;joomla.application.component.modelitem&#39;);
+
+class Jw_findstoreModelJw_findstore extends JModelItem
+{
+        protected $filters;
+        protected $collections;
+
+        public function getFilters() 
+        {
+                $db = JFactory::getDBO();
+                $query = $db-&gt;getQuery(true);
+                $query-&gt;select(&#39;id,title,image,ordering&#39;);
+                $query-&gt;from(&#39;#__jw_findstore_categories&#39;);
+                $query-&gt;where(&#39;state = 1&#39;);
+                $query-&gt;order(&#39;ordering ASC&#39;);
+                $db-&gt;setQuery((string)$query);
+                $categories = $db-&gt;loadObjectList();
+
+                foreach ($categories as $category){
+                        $db = JFactory::getDBO();
+                        $query = $db-&gt;getQuery(true);
+                        $query-&gt;select(&#39;id,title,collections,category,uris,ordering&#39;);
+                        $query-&gt;from(&#39;#__jw_findstore_mappings&#39;);
+                        $query-&gt;where(&#39;state = 1&#39;);
+                        $query-&gt;where(&#39;category = &#39;.$category-&gt;id);
+                        $query-&gt;order(&#39;ordering ASC&#39;);
+                        $db-&gt;setQuery((string)$query);
+                        $mappings = $db-&gt;loadObjectList();
+                        $filters[] = array($category-&gt;id =&gt; $category-&gt;title, &quot;image&quot; =&gt; $category-&gt;image, &quot;mappings&quot; =&gt; $mappings);
+                }
+
+                return $filters;
+        }
+
+        public function getCollections() 
+        {
+                $db = JFactory::getDBO();
+                $query = $db-&gt;getQuery(true);
+                $query-&gt;select(&#39;id,title,col_id,ordering&#39;);
+                $query-&gt;from(&#39;#__jw_findstore_collections&#39;);
+                $query-&gt;where(&#39;state = 1&#39;);
+                $query-&gt;order(&#39;ordering ASC&#39;);
+                $db-&gt;setQuery((string)$query);
+                $collections = $db-&gt;loadObjectList();
+
+                //$collections = json_encode($collections);
+                return $collections;
+        }
+
+        public function getMappings() 
+        {
+                $db = JFactory::getDBO();
+                $query = $db-&gt;getQuery(true);
+                $query-&gt;select(&#39;id,collections,category, uris&#39;);
+                $query-&gt;from(&#39;#__jw_findstore_mappings&#39;);
+                $query-&gt;where(&#39;state = 1&#39;);
+                $db-&gt;setQuery((string)$query);
+                $mappings = $db-&gt;loadObjectList();
+
+                return $mappings;
+        }
+
+        public function getUris() 
+        {
+                $db = JFactory::getDBO();
+                $query = $db-&gt;getQuery(true);
+                $query-&gt;select(&#39;id,collections,category,uris&#39;);
+                $query-&gt;from(&#39;#__jw_findstore_mappings&#39;);
+                $query-&gt;where(&#39;state = 1&#39;);
+                $db-&gt;setQuery((string)$query);
+                $mappings = $db-&gt;loadObjectList();
+
+                foreach ($mappings as $mapping){
+                        $db = JFactory::getDBO();
+                        $query = $db-&gt;getQuery(true);
+                        $query-&gt;select(&#39;id,title,collections,category,ordering&#39;);
+                        $query-&gt;from(&#39;#__jw_findstore_mappings&#39;);
+                        $query-&gt;where(&#39;state = 1&#39;);
+                        $query-&gt;where(&#39;category = &#39;.$category-&gt;id);
+                        $query-&gt;order(&#39;ordering ASC&#39;);
+                        $db-&gt;setQuery((string)$query);
+                        $mappings = $db-&gt;loadObjectList();
+                        $filters[] = array($category-&gt;id =&gt; $category-&gt;title, &quot;image&quot; =&gt; $category-&gt;image, &quot;mappings&quot; =&gt; $mappings);
+                }
+
+                return $filters;
+        }
+
+}</code></pre>
+
+			
 
 		</div>
 
