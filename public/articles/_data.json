@@ -10,17 +10,6 @@
 			"blog"
 		]
 	},
-	"harp-blog": {
-		"title": "Alex Crawford",
-		"publish": true,
-		"date": "December 07, 2014",
-		"category": "projects",
-		"intro": "This open source site, served on Debian with Nginx and Harp, built with the Foundation responsive framework, was my first foray into flat file minimalism. It worked magically.",
-		"image": "/assets/img/projects/paper.png",
-		"tags": [
-			"projects"
-		]
-	},
 	"jeld-wen": {
 		"title": "JELD-WEN",
 		"publish": true,
@@ -71,7 +60,9 @@
 		"date": "April 15, 2013",
 		"category": "code",
 		"intro": "I fell in love with these dynamic, responsive tables so much that I added pagination.",
+		"image": "/assets/img/projects/footable.png",
 		"tags": [
+			"projects",
 			"code"
 		],
 		"files": [
@@ -88,6 +79,28 @@
 		"category": "projects",
 		"intro": "Design UI and develop protoype for Facebook open source development training courses.",
 		"image": "/assets/img/projects/fbignite.png",
+		"tags": [
+			"projects"
+		]
+	},
+	"acelogin": {
+		"title": "Ace Login / Register",
+		"publish": true,
+		"date": "March 12, 2012",
+		"category": "projects",
+		"intro": "Ace Login Register combines the native login and registration functionality of Joomla into one slick module!",
+		"image": "/assets/img/projects/acelogin.jpg",
+		"tags": [
+			"projects"
+		]
+	},
+	"harp-blog": {
+		"title": "My Harp Blog",
+		"publish": true,
+		"date": "December 07, 2014",
+		"category": "projects",
+		"intro": "This open source site, served with just Nginx and Harp, built with the Foundation responsive framework, was my first foray into flat file minimalism. It worked magically.",
+		"image": "/assets/img/projects/paper.png",
 		"tags": [
 			"projects"
 		]
