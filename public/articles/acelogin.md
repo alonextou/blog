@@ -2,9 +2,9 @@
 
 <div class="row">
 	<div class="medium-6 columns">
-		[](https://0.s3.envato.com/files/21156331/alrEnvato1/2.JPG)
+		<img src="https://0.s3.envato.com/files/21156331/alrEnvato1/2.JPG">
 	</div>
 	<div class="medium-6 columns">
-		[](https://0.s3.envato.com/files/21156331/alrEnvato1/1.jpg)
+		<img src="https://0.s3.envato.com/files/21156331/alrEnvato1/1.jpg">
 	</div>
 </div>
