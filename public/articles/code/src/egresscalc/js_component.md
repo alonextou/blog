@@ -40,18 +40,6 @@ function Com_jw_egresscalc () {
 			dos: '>= 0'
 		}
 	}
-	/*
-	self.egressChecks = {
-		cow: '>= 20',
-		coh: '>= 24',
-		cos: {
-			first: '>= 5.0',
-			second: '>= 5.7'
-		}
-		vas: '>= 0',
-		dos: '>= 0'
-	}
-	*/
 
     self.init = function() {
     	self.inputMaterial.attr("disabled", true);

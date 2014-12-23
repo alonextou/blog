@@ -15,7 +15,7 @@
 		"publish": true,
 		"date": "July 07, 2012 - 2015",
 		"category": "projects",
-		"intro": "Numerous Javascript and PHP MVC components, written in the finest Joomla adherent AJAX fashion.",
+		"intro": "Over 100,000 lines of code and 50,000 deletions developing numerous PHP and Javascript AJAX components, written in the finest Joomla adherent fashion.",
 		"image": "/assets/img/projects/jeld-wen.png",
 		"tags": [
 			"projects",
@@ -29,6 +29,26 @@
 			{
 				"slug": "php_egresscalc",
 				"title": "egresscalc.php"
+			},
+			{
+				"slug": "js_findstore",
+				"title": "findstore.js"
+			},
+			{
+				"slug": "php_findstore_controller",
+				"title": "findstoreController.php"
+			},
+			{
+				"slug": "php_findstore_model",
+				"title": "findstoreController.php"
+			},
+			{
+				"slug": "js_orderstatus",
+				"title": "orderstatus.js"
+			},
+			{
+				"slug": "php_orderstatus",
+				"title": "orderstatus.php"
 			}
 		]
 	},
@@ -59,7 +79,7 @@
 		"publish": true,
 		"date": "April 15, 2013",
 		"category": "code",
-		"intro": "I fell in love with these dynamic, responsive tables so much that I added pagination.",
+		"intro": "I fell in love with these dynamic, responsive tables so much that I contributed a pagination plugin and demo.",
 		"image": "/assets/img/projects/footable.png",
 		"tags": [
 			"projects",
@@ -99,7 +119,7 @@
 		"publish": true,
 		"date": "December 07, 2014",
 		"category": "projects",
-		"intro": "This open source site, served with just Nginx and Harp, built with the Foundation responsive framework, was my first foray into flat file minimalism. It worked magically.",
+		"intro": "This open source site, served with just Harp and Nginx, was my first foray into flat file minimalism. It worked magically.",
 		"image": "/assets/img/projects/paper.png",
 		"tags": [
 			"projects"
