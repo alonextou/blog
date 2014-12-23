@@ -104,5 +104,16 @@
 		"tags": [
 			"projects"
 		]
+	},
+	"steam-debian-jessie": {
+		"title": "Installing Steam on Debian 8 Jessie",
+		"publish": false,
+		"date": "December 20, 2014",
+		"category": "blog",
+		"intro": "It used to be hard, but ",
+		"image": "/assets/img/projects/paper.png",
+		"tags": [
+			"blog"
+		]
 	}
 }
