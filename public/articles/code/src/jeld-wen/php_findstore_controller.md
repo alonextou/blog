@@ -26,7 +26,7 @@ class Jw_findstoreControllerFindstore extends Jw_findstoreController
 		$selRadius = (empty($_GET['selRadius']) ? 40 : $_GET['selRadius']);
 		$selModel = (empty($_GET['selModel']) ? null : $_GET['selModel']);
 
-		$url = 'https://ws2.jeld-wen.net/sales/GetDealersTest?zip='. $selZip .'&distance='. $selRadius .'&collectionId='. implode(',', $selFilters);
+		$url = 'GetDealersTest?zip='. $selZip .'&distance='. $selRadius .'&collectionId='. implode(',', $selFilters);
 
 		$debug = false;
 		if ($debug == true) {
@@ -37,9 +37,9 @@ class Jw_findstoreControllerFindstore extends Jw_findstoreController
 			$options = array(
 				CURLOPT_FOLLOWLOCATION => true,
 				CURLOPT_RETURNTRANSFER => true,
-				CURLOPT_SSLCERT => JPATH_BASE.'/libraries/fluid/webservices/certs/fluid-cert.pem',
-				CURLOPT_SSLCERTPASSWD => 'gw5yxjx96v',
-				CURLOPT_SSLKEY => JPATH_BASE.'/libraries/fluid/webservices/certs/fluid-key.pem',
+				CURLOPT_SSLCERT => JPATH_BASE.'...',
+				CURLOPT_SSLCERTPASSWD => '...',
+				CURLOPT_SSLKEY => JPATH_BASE.'...',
 			);
 			curl_setopt_array($ch, $options);
 			$response = curl_exec($ch);
@@ -179,8 +179,8 @@ class Jw_findstoreControllerFindstore extends Jw_findstoreController
 		$selFilters = $_GET['selFilters'];
 		$selRadius = $_GET['selRadius'];
 
-		$url = 'https://ws2.jeld-wen.net/sales/GetDealersTest?zip='. $selZip .'&distance='. $selRadius .'&collectionId='. $selFilters;
-		//$url = 'https://webappstest1.jw.local/atlas/GetDealers/report.xml?zip='. $selZip .'&distance=40&collectionId='. $selFilters;
+		$url = '.../GetDealersTest?zip='. $selZip .'&distance='. $selRadius .'&collectionId='. $selFilters;
+		//$url = 'webappstest1.local/atlas/GetDealers/report.xml?zip='. $selZip .'&distance=40&collectionId='. $selFilters;
 
 		$timeBench01start = microtime(true);
 
@@ -188,9 +188,9 @@ class Jw_findstoreControllerFindstore extends Jw_findstoreController
 		$options = array(
 			CURLOPT_FOLLOWLOCATION => true,
 			CURLOPT_RETURNTRANSFER => true,
-			CURLOPT_SSLCERT => JPATH_BASE.'/libraries/fluid/webservices/certs/fluid-cert.pem',
-			CURLOPT_SSLCERTPASSWD => 'gw5yxjx96v',
-			CURLOPT_SSLKEY => JPATH_BASE.'/libraries/fluid/webservices/certs/fluid-key.pem',
+			CURLOPT_SSLCERT => JPATH_BASE.'...',
+			CURLOPT_SSLCERTPASSWD => '...',
+			CURLOPT_SSLKEY => JPATH_BASE.'...',
 		);
 		curl_setopt_array($ch, $options);
 

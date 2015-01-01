@@ -184,16 +184,20 @@
 	<% if(public.articles._data[slug].publish !== true) { continue; } %>
 	<% if(public.articles._data[slug].tags.indexOf("projects") === -1) { continue; } %>
 
-	<div id="modal-<%= slug %>" class="reveal-modal small" data-reveal>
+	<div id="modal-<%= slug %>" class="reveal-modal medium" data-reveal>
 		<h3><%= public.articles._data[slug].title %></h3>
 
-		<p><%= public.articles._data[slug].intro %></p>
 		<hr>
+
+		<%- partial("articles/" + slug) %>
+
+		<!-- <p><%= public.articles._data[slug].intro %></p> -->
+
+		<hr>
+
 		<a href="/articles/<%= slug %>" class="button small success expand">
 			Read <i class="fa fa-book"></i> more!
 		</a>
-
-		<!--<%- partial("articles/" + slug) %>-->
 
 		<a class="close-reveal-modal">&#215;</a>
 	</div>

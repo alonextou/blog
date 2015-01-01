@@ -25,7 +25,7 @@ class Jw_lookupControllerStatus extends Jw_lookupController
 
 		$ordernum = $input['ordernum'];
 
-		$url = "https://ws2.jeld-wen.net/Jw_Thd_Wsi_GetOrderStatusWS?wsdl";
+		$url = ".../Jw_Thd_Wsi_GetOrderStatusWS?wsdl";
 		$local_cert = "...";
 		$passphrase = "...";
 		$options = array(
@@ -43,7 +43,7 @@ class Jw_lookupControllerStatus extends Jw_lookupController
 
 		try {
 			$client = new SoapClient($url, $options);
-			$client->__setLocation('https://ws2.jeld-wen.net/Jw_Thd_Wsi_GetOrderStatusWS?wsdl');
+			$client->__setLocation('.../Jw_Thd_Wsi_GetOrderStatusWS?wsdl');
 			$response = $client->getOrderStatus($parameters);
 
 			if($debug){
