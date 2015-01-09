@@ -12,5 +12,9 @@
   "dependencies": {
     "forever": "^0.13.0",
     "harp": "^0.14.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:awc737/harp-blog.git"
   }
 }
