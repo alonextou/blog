@@ -101,7 +101,7 @@
  <em> @package     com_jw_findstore
  </em> @copyright   JELD-WEN © Copyright 2012. All Rights Reserved.
  <em> @license     GNU General Public License version 2 or later; see LICENSE.txt
- </em> @author      Alex Crawford <a href="&#109;&#97;&#x69;&#108;&#x74;&#111;&#58;&#97;&#x6c;&#101;&#120;&#99;&#64;&#x6a;&#101;&#x6c;&#100;&#x2d;&#x77;&#x65;&#110;&#x2e;&#x63;&#x6f;&#109;">&#97;&#x6c;&#101;&#120;&#99;&#64;&#x6a;&#101;&#x6c;&#100;&#x2d;&#x77;&#x65;&#110;&#x2e;&#x63;&#x6f;&#109;</a> - JELD-WEN <a href="http://jeld-wen.com">http://jeld-wen.com</a>
+ </em> @author      Alex Crawford <a href="&#x6d;&#x61;&#x69;&#108;&#116;&#x6f;&#58;&#97;&#x6c;&#101;&#x78;&#x63;&#x40;&#x6a;&#x65;&#x6c;&#100;&#x2d;&#119;&#101;&#110;&#46;&#x63;&#111;&#109;">&#97;&#x6c;&#101;&#x78;&#x63;&#x40;&#x6a;&#x65;&#x6c;&#100;&#x2d;&#119;&#101;&#110;&#46;&#x63;&#111;&#109;</a> - JELD-WEN <a href="http://jeld-wen.com">http://jeld-wen.com</a>
  */</p>
 <p>header(&#39;Content-Type: application/json&#39;);
 defined(&#39;_JEXEC&#39;) or die;

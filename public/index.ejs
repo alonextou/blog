@@ -51,133 +51,132 @@
 	</div>
 </div>
 
-<div class="row">
-	<div class="medium-8 columns">
-		<h3 class="header">Recent Projects</h3>
+<div id="home_page">
+	<div class="row">
+		<div class="medium-8 columns">
+			<h3 class="header">Recent Projects</h3>
 
-		<!-- slider on small -->
+			<div id="recent_projects_slider">
+				<% for(var slug in public.articles._data){ %>
+					<% if(public.articles._data[slug].publish !== true) { continue; } %>
+					<% if(public.articles._data[slug].tags.indexOf("projects") === -1) { continue; } %>
+					
+					<div class="small-4 columns project_link" data-reveal-id="modal-<%= slug %>">
+						<ul class="grid cs-style-6">
+						    <li>
+						        <div class="figure">
+						            <img src="<%= public.articles._data[slug].image %>" title="<%= public.articles._data[slug].title %>">
+						            <div class="figcaption">
+						                <span><%= public.articles._data[slug].title %></span>
+						            </div>
+						        </div>
+						    </li>
+						</ul>
+					</div>
+				<% }; %>
+			</div>
 
-		<div id="recent_projects_slider">
+			<!--
+			<div id="recent_projects" class="row hide-for-medium-down">
+				<% for(var slug in public.articles._data){ %>
+					<% if(public.articles._data[slug].publish !== true) { continue; } %>
+					<% if(public.articles._data[slug].tags.indexOf("projects") === -1) { continue; } %>
+					<div class="medium-6 large-4 columns project_link" data-reveal-id="modal-<%= slug %>">
+						<ul class="grid cs-style-6">
+						    <li>
+						        <div class="figure">
+						            <img src="<%= public.articles._data[slug].image %>" title="<%= public.articles._data[slug].title %>">
+						            <div class="figcaption">
+						                <span><%= public.articles._data[slug].title %></span>
+						            </div>
+						        </div>
+						    </li>
+						</ul>
+					</div>
+					<div id="modal-<%= slug %>" class="reveal-modal" data-reveal>
+						<h3><%= public.articles._data[slug].title %></h3>
+						<a class="close-reveal-modal">&#215;</a>
+					</div>
+				<% }; %>
+			</div>
+			-->
+
+			<h3 id="why-hire-me" class="header">Why Hire Me?</h3>
+			<!--<p>
+			I live in Portlandia, have a high-cut combover, a mustache and black thick rimmed glasses. <br class="hide-for-medium-down">If that's not enough, I like running, biking and craft beer, sometimes in conjuction! No, I  am not willing to cut my mohawk blue, but I would die it blue if <span>Intel</span> hires me.
+			</p>-->
+			<p>
+			I operate a hosting platform, a software company, a game development community and a competitive gaming league. For years I've curated and automated my projects to the point of being self-sufficient, thus promoting my pursuit of future endeavors.
+			</p>
+			<hr>
+
+			<h3 class="header">Recent Blogs</h3>
 			<% for(var slug in public.articles._data){ %>
 				<% if(public.articles._data[slug].publish !== true) { continue; } %>
-				<% if(public.articles._data[slug].tags.indexOf("projects") === -1) { continue; } %>
+				<% if(public.articles._data[slug].tags.indexOf("blog") === -1) { continue; } %>
 				
-				<div class="small-4 columns project_link" data-reveal-id="modal-<%= slug %>">
-					<ul class="grid cs-style-6">
-					    <li>
-					        <div class="figure">
-					            <img src="<%= public.articles._data[slug].image %>" title="<%= public.articles._data[slug].title %>">
-					            <div class="figcaption">
-					                <span><%= public.articles._data[slug].title %></span>
-					            </div>
-					        </div>
-					    </li>
-					</ul>
-				</div>
+	            <h4><%= public.articles._data[slug].title %></h4>		         
 			<% }; %>
-		</div>
-
-		<!--
-		<div id="recent_projects" class="row hide-for-medium-down">
-			<% for(var slug in public.articles._data){ %>
-				<% if(public.articles._data[slug].publish !== true) { continue; } %>
-				<% if(public.articles._data[slug].tags.indexOf("projects") === -1) { continue; } %>
-				<div class="medium-6 large-4 columns project_link" data-reveal-id="modal-<%= slug %>">
-					<ul class="grid cs-style-6">
-					    <li>
-					        <div class="figure">
-					            <img src="<%= public.articles._data[slug].image %>" title="<%= public.articles._data[slug].title %>">
-					            <div class="figcaption">
-					                <span><%= public.articles._data[slug].title %></span>
-					            </div>
-					        </div>
-					    </li>
-					</ul>
-				</div>
-				<div id="modal-<%= slug %>" class="reveal-modal" data-reveal>
-					<h3><%= public.articles._data[slug].title %></h3>
-					<a class="close-reveal-modal">&#215;</a>
-				</div>
-			<% }; %>
-		</div>
-		-->
-
-		<h3 id="why-hire-me" class="header">Why Hire Me?</h3>
-		<!--<p>
-		I live in Portlandia, have a high-cut combover, a mustache and black thick rimmed glasses. <br class="hide-for-medium-down">If that's not enough, I like running, biking and craft beer, sometimes in conjuction! No, I  am not willing to cut my mohawk blue, but I would die it blue if <span>Intel</span> hires me.
-		</p>-->
-		<p>
-		I operate a hosting platform, a software company, a game development community and a competitive gaming league. For years I've curated and automated my projects to the point of being self-sufficient, thus promoting my pursuit of future endeavors.
-		</p>
-		<hr>
-
-		<h3 class="header">Recent Blogs</h3>
-		<% for(var slug in public.articles._data){ %>
-			<% if(public.articles._data[slug].publish !== true) { continue; } %>
-			<% if(public.articles._data[slug].tags.indexOf("blog") === -1) { continue; } %>
 			
-            <h4><%= public.articles._data[slug].title %></h4>		         
-		<% }; %>
-		
-	</div>
-
-	<div class="medium-4 columns">
-
-		<h3 class="header">What I Do</h3>
-		<div id="what-i-do" class="panel">
-			<p>Elegant and dynamic client-driven sites</p>
-			<div class="row">
-			    <div class="small-3 columns">
-			    	<img src="http://cdn1.iconfinder.com/data/icons/iconset-addictive-flavour/png/chrome.png" alt="chrome">
-		    	</div>
-			    <div class="small-3 columns">
-			    	<img src="http://cdn1.iconfinder.com/data/icons/iconset-addictive-flavour/png/firefox.png" alt="firefox">
-		    	</div>
-			    <div class="small-3 columns">
-			    	<img src="http://cdn1.iconfinder.com/data/icons/miniiconset/48/Safari_Agua.png" alt="safari">
-		    	</div>
-			    <div class="small-3 columns">
-			    	<img src="http://cdn1.iconfinder.com/data/icons/iconset-addictive-flavour/png/internet_explorer.png" alt="ie">
-		    	</div>
-		    </div>
-		    <hr>
-		    <p>Cross-platform games and applications</p>
-    		<div class="row">
-			    <div class="small-3 columns">
-			    	<img src="https://cdn1.iconfinder.com/data/icons/metro-ui-dock/128/OS_Android.png" alt="android">
-		    	</div>
-			    <div class="small-3 columns">
-			    	<img src="https://cdn2.iconfinder.com/data/icons/metro-ui-dock/128/OS_Linux.png" alt="iphone">
-		    	</div>
-			    <div class="small-3 columns">
-			    	<img src="https://cdn1.iconfinder.com/data/icons/metro-ui-dock-icon-set--icons-by-dakirby/128/Apple.png" alt="apple">
-		    	</div>
-			    <div class="small-3 columns">
-			    	<img src="https://cdn2.iconfinder.com/data/icons/metro-ui-dock/128/OS_Windows_8.png" alt="windows">
-		    	</div>
-		    </div>
-		    <hr>
 		</div>
 
-		<h3 class="header">My Experience</h3>
-		<p>
-			HTML5, CSS3, Javascript, ES6,
-			Systems Administration, Architecture, DevOps,
-			Linux, Debian, KVM, Docker, Git, 
-			Chef, Puppet, Vagrant, NGINX, Apache,
-			PHP, C#, Java, Ruby, Python,
-			SQL, MySQL, PostgreSQL,
-			NoSQL, MongoDB, RethinkDB,
-			Redis, Memcached, SOLR, ElasticSearch,
-			Laravel, Joomla, Drupal, Symfony,
-			NodeJS, Meteor, Angular, Ember,
-			EJS, Jade, SASS, Less, Grunt, Capistrano
-		</p>
-		<hr>
-		<a class="twitter-timeline" href="https://twitter.com/awc737" data-widget-id="388016044029124608">Tweets by @awc737</a>
-		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-	</div>
+		<div class="medium-4 columns">
 
+			<h3 class="header">What I Do</h3>
+			<div id="what-i-do" class="panel">
+				<p>Elegant and dynamic client-driven sites</p>
+				<div class="row">
+				    <div class="small-3 columns">
+				    	<img src="http://cdn1.iconfinder.com/data/icons/iconset-addictive-flavour/png/chrome.png" alt="chrome">
+			    	</div>
+				    <div class="small-3 columns">
+				    	<img src="http://cdn1.iconfinder.com/data/icons/iconset-addictive-flavour/png/firefox.png" alt="firefox">
+			    	</div>
+				    <div class="small-3 columns">
+				    	<img src="http://cdn1.iconfinder.com/data/icons/miniiconset/48/Safari_Agua.png" alt="safari">
+			    	</div>
+				    <div class="small-3 columns">
+				    	<img src="http://cdn1.iconfinder.com/data/icons/iconset-addictive-flavour/png/internet_explorer.png" alt="ie">
+			    	</div>
+			    </div>
+			    <hr>
+			    <p>Cross-platform games and applications</p>
+	    		<div class="row">
+				    <div class="small-3 columns">
+				    	<img src="https://cdn1.iconfinder.com/data/icons/metro-ui-dock/128/OS_Android.png" alt="android">
+			    	</div>
+				    <div class="small-3 columns">
+				    	<img src="https://cdn2.iconfinder.com/data/icons/metro-ui-dock/128/OS_Linux.png" alt="iphone">
+			    	</div>
+				    <div class="small-3 columns">
+				    	<img src="https://cdn1.iconfinder.com/data/icons/metro-ui-dock-icon-set--icons-by-dakirby/128/Apple.png" alt="apple">
+			    	</div>
+				    <div class="small-3 columns">
+				    	<img src="https://cdn2.iconfinder.com/data/icons/metro-ui-dock/128/OS_Windows_8.png" alt="windows">
+			    	</div>
+			    </div>
+			    <hr>
+			</div>
+
+			<h3 class="header">My Experience</h3>
+			<p>
+				HTML5, CSS3, Javascript, ES6,
+				Systems Administration, Architecture, DevOps,
+				Linux, Debian, KVM, Docker, Git, 
+				Chef, Puppet, Vagrant, NGINX, Apache,
+				PHP, C#, Java, Ruby, Python,
+				SQL, MySQL, PostgreSQL,
+				NoSQL, MongoDB, RethinkDB,
+				Redis, Memcached, SOLR, ElasticSearch,
+				Laravel, Joomla, Drupal, Symfony,
+				NodeJS, Meteor, Angular, Ember,
+				EJS, Jade, SASS, Less, Grunt, Capistrano
+			</p>
+			<hr>
+			<a class="twitter-timeline" href="https://twitter.com/awc737" data-widget-id="388016044029124608">Tweets by @awc737</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+		</div>
+	</div>
 </div>
 
 <% for(var slug in public.articles._data){ %>
