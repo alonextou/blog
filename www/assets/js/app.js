@@ -6,12 +6,12 @@ $(document).ready(function(){
 		dots: true,
 		slidesToShow: 3,
 		autoplay: true,
-		autoplaySpeed: 3000,
+		autoplaySpeed: 2000,
 	});
 	$('#who_i_am_slider').slick({
 		arrows: false,
 		autoplay: true,
-		autoplaySpeed: 2000,
+		autoplaySpeed: 1500,
 		fade: true,
 		vertical: false
 	});

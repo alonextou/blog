@@ -36,12 +36,26 @@ module.exports = function(grunt) {
         files: 'app/scss/**/*.scss',
         tasks: ['sass']
       }
+    },
+
+    shipit: {
+      options: {
+        workspace: '<%= cfg.workspace %>',
+        deployTo: '<%= cfg.deployTo %>',
+        repositoryUrl: '<%= pkg.repository.url %>',
+        ignores: ['.git', 'node_modules'],
+        keepReleases: 2
+      },
+      production: {
+        servers: ['<%= cfg.user %>@<%= cfg.production %>']
+      }
     }
   });
 
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-shipit');
 
   grunt.registerTask('build', ['sass']);
   grunt.registerTask('default', ['build','watch']);
