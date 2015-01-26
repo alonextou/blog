@@ -100,70 +100,14 @@
 		<div id="page">
 			
 			
-				<p>&lt;?php</p>
-<p>class AdminArticleController extends BaseController {</p>
-<pre><code>public function getIndex()
-{
-    $articles = Article::all();
-    return View::make(&#39;admin/articles/index&#39;)
-        -&gt;with([&#39;articles&#39; =&gt; $articles]);
-}
-
-public function getCreate()
-{
-    $tags = Tag::all();
-    return View::make(&#39;admin/articles/create&#39;)
-        -&gt;with([&#39;tags&#39; =&gt; $tags]);
-}
-
-public function postCreate()
-{
-    $input = Input::all();
-
-    $rules = [
-        &#39;title&#39; =&gt; &#39;required&#39;
-    ];
-
-    $validator = Validator::make($input, $rules);
-    if ($validator-&gt;fails()) {
-        return Redirect::back()
-            -&gt;withErrors($validator)
-            -&gt;withInput(Input::all());
-    }
-
-    $article = new Article;
-    $article-&gt;title = $input[&#39;title&#39;];
-    $article-&gt;alias = strtolower(str_replace(&#39; &#39;, &#39;-&#39;, $article-&gt;title));
-    $article-&gt;intro = $input[&#39;intro&#39;];
-    $article-&gt;content = $input[&#39;content&#39;];
-    if (Input::hasFile(&#39;image&#39;))
-    {
-        $path = public_path() . &#39;/img/articles/&#39;;
-        $filename = str_random(10) . &#39;.&#39; . Input::file(&#39;image&#39;)-&gt;getClientOriginalExtension();
-        Input::file(&#39;image&#39;)-&gt;move($path, $filename);
-        $article-&gt;image = &#39;/img/articles/&#39; . $filename;
-    }
-    $article-&gt;save();
-    if (Input::has(&#39;tags&#39;))
-    {
-        foreach($input[&#39;tags&#39;] as $id) {
-            $tag = Tag::find($id);
-            $article-&gt;tags()-&gt;attach($id);
-        }
-    }
-
-
-    return Redirect::route(&#39;admin_articles&#39;)
-        -&gt;with(&#39;alert&#39;, [&#39;success&#39;, &#39;Article succesfully created.&#39;]);
-}
-
-public function getUpdate($id)
-{
-    $article = Article::find($id)-&gt;toArray();
-    return View::make(&#39;admin/articles/update&#39;)
-        -&gt;with([&#39;article&#39; =&gt; $article]);
-}</code></pre>
-<p>}</p>
+				<h2>Use Harp Web Server with Grunt and Foundation Zurb</h2>
+<h4>Required Software</h4>
+<h4>Let&#39;s get started</h4>
+<ol>
+<li><pre><code>cd path/to/sites
+foundation new project_name --libsass</code></pre>
+</li>
+</ol>
 
 			
 

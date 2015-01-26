@@ -25,19 +25,24 @@
 
 				<ul class="right contact_icons hide-for-small">
 					<li>
-						<a href="#"><i class="fa fa-twitter fa-2x"></i></a>
+						<a href="http://twitter.com/awc737" target="_blank">
+							<i class="fa fa-twitter fa-2x"></i>
+						</a>
 					</li>
 					<li>
-						<a href="#"><i class="fa fa-github fa-2x"></i></a>
+						<a href="https://github.com/awc737" target="_blank">
+							<i class="fa fa-github fa-2x"></i>
+						</a>
 					</li>
 					<li>
-						<a href="#"><i class="fa fa-steam fa-2x fa-spin"></i></a>
+						<a href="http://steamcommunity.com/id/artificialex" target="_blank">
+							<i class="fa fa-steam fa-2x fa-spin"></i>
+						</a>
 					</li>
 					<li>
-						<a href="#"><i class="fa fa-linkedin fa-2x"></i></a>
-					</li>
-					<li>
-						<a href="#"><i class="fa fa-facebook fa-2x"></i></a>
+						<a href="https://www.linkedin.com/profile/view?id=104963465&trk=nav_responsive_tab_profile" target="_blank">
+							<i class="fa fa-linkedin fa-2x"></i>
+						</a>
 					</li>
 				</ul>
 
