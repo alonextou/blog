@@ -1,6 +1,6 @@
 {
-  "user": "acrawford",
-  "workspace": "/var/www/deploy/alexcrawford/blog",
-  "deployTo": "/var/www/alexcrawford/blog",
-  "production": "vps1.cagehost.com"
+  "user": "root",
+  "workspace": "/home/alex/dev/deploy/alexcrawford/blog",
+  "deployTo": "/var/www/deploy/alexcrawford/blog",
+  "production": "alexcrawford.me"
 }

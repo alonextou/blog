@@ -180,8 +180,8 @@ if (!Array.prototype.indexOf) {
         }
         return -1;
     }
-}</code></pre>
-<p>});</p>
+}
+</code></pre><p>});</p>
 <p>/<em> Click Events </em>/</p>
 <p>// Submit form
 $(&#39;#findstore-submit&#39;).click(function() {
@@ -259,8 +259,8 @@ function validate(form){
     response.reject();
 }
 
-return response.promise();</code></pre>
-<p>}</p>
+return response.promise();
+</code></pre><p>}</p>
 <p>// preselect checkboxes
 function initCheckbox(uri) {
     var segments = uri.split(&quot;/&quot;);
@@ -312,8 +312,8 @@ var marker = new google.maps.Marker({
 findstore.dirMarkers.push(marker);
 findstore.dirBounds.extend(marker.position);
 findstore.dirMap.fitBounds(findstore.dirBounds);
-findstore.dirMap.setZoom(14);</code></pre>
-<p>}</p>
+findstore.dirMap.setZoom(14);
+</code></pre><p>}</p>
 <p>function calcRoute(start, end) {
     var request = {
         origin:start,
@@ -348,8 +348,8 @@ for (var i = 0; i &lt; route.steps.length; i++) {
 
 $(&#39;#findstore-direction-steps&#39;).append(
     &#39;&lt;h5&gt;&#39; + route.end_address + &#39;&lt;/h5&gt;&#39;    
-);</code></pre>
-<p>}</p>
+);
+</code></pre><p>}</p>
 <p>function initMappings(){
     findstore.mappings.length = 0;
     $.each(findstore.results, function(i, result) {
@@ -469,8 +469,8 @@ if (findstore.mappings.length &gt; 0){
     clearResults();
 }
 
-$(&quot;.iframe&quot;).colorbox({iframe:true, width:&quot;840px&quot;, height:&quot;600px&quot;, scrolling: false});</code></pre>
-<p>}</p>
+$(&quot;.iframe&quot;).colorbox({iframe:true, width:&quot;840px&quot;, height:&quot;600px&quot;, scrolling: false});
+</code></pre><p>}</p>
 <p>function updateMap(){
     clearMap();
     findstore.bounds = new google.maps.LatLngBounds();
@@ -498,8 +498,8 @@ $(&quot;.iframe&quot;).colorbox({iframe:true, width:&quot;840px&quot;, height:&q
     findstore.markers.push(mapping.marker);
 });
 
-map.fitBounds(findstore.bounds);</code></pre>
-<p>}</p>
+map.fitBounds(findstore.bounds);
+</code></pre><p>}</p>
 <p>function clearResults(){
     $(&#39;#findstore-results-body tr&#39;).not(&#39;.first&#39;).remove();
     $(&#39;#findstore-right-bottom&#39;).hide();
@@ -512,7 +512,6 @@ map.fitBounds(findstore.bounds);</code></pre>
     }
     findstore.markers.length = 0;
 }</p>
-
 			
 
 		</div>
@@ -520,10 +519,10 @@ map.fitBounds(findstore.bounds);</code></pre>
 		<div id="footer">
 			<div class="row">
 				<div id="built_with_title" class="medium-8 columns text-right hide-for-small">
-					This site is proudly built with:
+					This site is proudly built using:
 				</div>
 				<div id="built_with_title_small" class="large-12 columns text-right show-for-small">
-					This site is proudly built with::
+					This site is proudly built using:
 				</div>
 				<div id="built_with" class="medium-4 columns pull-right">
 					<div class="icon-bar four-up">

@@ -120,15 +120,14 @@
     Route::get(&#39;login&#39;, [&#39;as&#39; =&gt; &#39;login&#39;, &#39;uses&#39; =&gt; &#39;AuthController@getLogin&#39;]);</p>
 <pre><code>Route::group([&#39;before&#39; =&gt; &#39;csrf&#39;], function(){
     Route::post(&#39;login&#39;, [&#39;uses&#39; =&gt; &#39;AuthController@postLogin&#39;]);
-});</code></pre>
-<p>});</p>
+});
+</code></pre><p>});</p>
 <p>Route::group([&#39;prefix&#39; =&gt; &#39;blog&#39;], function()
 {<br>    Route::get(&#39;/&#39;, [&#39;as&#39; =&gt; &#39;blog&#39;, &#39;uses&#39; =&gt; &#39;BlogController@getIndex&#39;]);
     Route::get(&#39;/{alias}&#39;, [&#39;as&#39; =&gt; &#39;blog_post&#39;, &#39;uses&#39; =&gt; &#39;BlogController@getPost&#39;]);
 });</p>
 <p>Route::get(&#39;logout&#39;, [&#39;as&#39; =&gt; &#39;logout&#39;, &#39;uses&#39; =&gt; &#39;AuthController@getLogout&#39;]);</p>
 <p>Route::get(&#39;/&#39;, [&#39;as&#39; =&gt; &#39;home&#39;, &#39;uses&#39; =&gt; &#39;HomeController@getIndex&#39;]);</p>
-
 			
 
 		</div>
@@ -136,10 +135,10 @@
 		<div id="footer">
 			<div class="row">
 				<div id="built_with_title" class="medium-8 columns text-right hide-for-small">
-					This site is proudly built with:
+					This site is proudly built using:
 				</div>
 				<div id="built_with_title_small" class="large-12 columns text-right show-for-small">
-					This site is proudly built with::
+					This site is proudly built using:
 				</div>
 				<div id="built_with" class="medium-4 columns pull-right">
 					<div class="icon-bar four-up">

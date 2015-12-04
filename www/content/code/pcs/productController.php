@@ -429,8 +429,8 @@ class ProductController extends \BaseController {
         return Redirect::action(&#39;DoorController@index&#39;);
     }
 
-}</code></pre>
-
+}
+</code></pre>
 			
 
 		</div>
@@ -438,10 +438,10 @@ class ProductController extends \BaseController {
 		<div id="footer">
 			<div class="row">
 				<div id="built_with_title" class="medium-8 columns text-right hide-for-small">
-					This site is proudly built with:
+					This site is proudly built using:
 				</div>
 				<div id="built_with_title_small" class="large-12 columns text-right show-for-small">
-					This site is proudly built with::
+					This site is proudly built using:
 				</div>
 				<div id="built_with" class="medium-4 columns pull-right">
 					<div class="icon-bar four-up">

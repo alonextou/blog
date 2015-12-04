@@ -239,9 +239,8 @@ public function getOrderStep($response) {
     } else {
         return &#39;0&#39;;
     }
-}</code></pre>
-<p>}</p>
-
+}
+</code></pre><p>}</p>
 			
 
 		</div>
@@ -249,10 +248,10 @@ public function getOrderStep($response) {
 		<div id="footer">
 			<div class="row">
 				<div id="built_with_title" class="medium-8 columns text-right hide-for-small">
-					This site is proudly built with:
+					This site is proudly built using:
 				</div>
 				<div id="built_with_title_small" class="large-12 columns text-right show-for-small">
-					This site is proudly built with::
+					This site is proudly built using:
 				</div>
 				<div id="built_with" class="medium-4 columns pull-right">
 					<div class="icon-bar four-up">

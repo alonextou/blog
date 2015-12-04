@@ -162,9 +162,8 @@ public function getUpdate($id)
     $article = Article::find($id)-&gt;toArray();
     return View::make(&#39;admin/articles/update&#39;)
         -&gt;with([&#39;article&#39; =&gt; $article]);
-}</code></pre>
-<p>}</p>
-
+}
+</code></pre><p>}</p>
 			
 
 		</div>
@@ -172,10 +171,10 @@ public function getUpdate($id)
 		<div id="footer">
 			<div class="row">
 				<div id="built_with_title" class="medium-8 columns text-right hide-for-small">
-					This site is proudly built with:
+					This site is proudly built using:
 				</div>
 				<div id="built_with_title_small" class="large-12 columns text-right show-for-small">
-					This site is proudly built with::
+					This site is proudly built using:
 				</div>
 				<div id="built_with" class="medium-4 columns pull-right">
 					<div class="icon-bar four-up">

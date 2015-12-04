@@ -101,13 +101,15 @@
 			
 			
 				<p>&lt;?php</p>
-<p>/<em>*
- </em> @version     1.0.0
- <em> @package     com_jw_findstore
- </em> @copyright   JELD-WEN © Copyright 2012. All Rights Reserved.
- <em> @license     GNU General Public License version 2 or later; see LICENSE.txt
- </em> @author      Alex Crawford <a href="&#109;&#x61;&#105;&#108;&#116;&#111;&#x3a;&#x61;&#x6c;&#101;&#x78;&#99;&#64;&#x6a;&#101;&#108;&#100;&#x2d;&#x77;&#101;&#110;&#x2e;&#99;&#x6f;&#x6d;">&#x61;&#x6c;&#101;&#x78;&#99;&#64;&#x6a;&#101;&#108;&#100;&#x2d;&#x77;&#101;&#110;&#x2e;&#99;&#x6f;&#x6d;</a> - JELD-WEN <a href="http://jeld-wen.com">http://jeld-wen.com</a>
- */</p>
+<p>/**</p>
+<ul>
+<li>@version     1.0.0</li>
+<li>@package     com_jw_findstore</li>
+<li>@copyright   JELD-WEN © Copyright 2012. All Rights Reserved.</li>
+<li>@license     GNU General Public License version 2 or later; see LICENSE.txt</li>
+<li>@author      Alex Crawford <a href="&#109;&#x61;&#105;&#108;&#116;&#x6f;&#x3a;&#x61;&#108;&#x65;&#x78;&#x63;&#64;&#106;&#101;&#x6c;&#x64;&#x2d;&#x77;&#101;&#110;&#46;&#x63;&#x6f;&#109;">&#x61;&#108;&#x65;&#x78;&#x63;&#64;&#106;&#101;&#x6c;&#x64;&#x2d;&#x77;&#101;&#110;&#46;&#x63;&#x6f;&#109;</a> - JELD-WEN <a href="http://jeld-wen.com">http://jeld-wen.com</a>
+*/</li>
+</ul>
 <p>header(&#39;Content-Type: application/json&#39;);
 defined(&#39;_JEXEC&#39;) or die;
 require_once JPATH_COMPONENT.&#39;/controller.php&#39;;</p>
@@ -410,9 +412,8 @@ public function debug() {
 
     die;
 
-}</code></pre>
-<p>}</p>
-
+}
+</code></pre><p>}</p>
 			
 
 		</div>
@@ -420,10 +421,10 @@ public function debug() {
 		<div id="footer">
 			<div class="row">
 				<div id="built_with_title" class="medium-8 columns text-right hide-for-small">
-					This site is proudly built with:
+					This site is proudly built using:
 				</div>
 				<div id="built_with_title_small" class="large-12 columns text-right show-for-small">
-					This site is proudly built with::
+					This site is proudly built using:
 				</div>
 				<div id="built_with" class="medium-4 columns pull-right">
 					<div class="icon-bar four-up">
