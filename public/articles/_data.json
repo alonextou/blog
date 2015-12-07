@@ -1,10 +1,10 @@
 {
-	"init": {
+	"welcome": {
 		"title": "Welcome",
 		"publish": true,
 		"date": "December 07, 2014",
 		"category": "blog",
-		"intro": "My open source blog is served on Debian using Nginx and Harp.",
+		"intro": "Check out the source code to my blog, served efficiently by Node and Nginx. My first foray into flat-file minamilsm worked magically.",
 		"image": "/assets/img/projects/paper.png",
 		"tags": [
 			"blog"
@@ -119,7 +119,7 @@
 		"publish": true,
 		"date": "December 07, 2014",
 		"category": "projects",
-		"intro": "This open source site, served with just Harp and Nginx, was my first foray into flat file minimalism. It worked magically.",
+		"intro": "My open source blog, served with just Harp and Nginx, was my first foray into flat-file minimalism. It worked magically.",
 		"image": "/assets/img/projects/paper.png",
 		"tags": [
 			"projects"

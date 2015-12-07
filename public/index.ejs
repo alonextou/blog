@@ -44,7 +44,7 @@
 		<!--
 		<div>
 			<h5>DevOps Systems Administrator</h5>
-			<p>When I was twelve, I converted my family to Linux with a demo of Knoppix. From RHEL to Debian, to Windows and beyond (hyperscale enterprise clouds), I write and maintain software that automates with hardware.</p>
+			<p>When I was twelve, I converted my family to Linux with a demo of Knoppix. From RHEL to Debian, to Windows and beyond (hyperscale enterprise clouds?), I write and maintain software that automates itself.</p>
 		</div>
 		-->
 
@@ -103,14 +103,8 @@
 		-->
 
 		<h3 id="why-hire-me" class="header">Why Hire Me?</h3>
-		<!--<p>
-		I live in Portlandia, have a high-cut combover, a mustache and black thick rimmed glasses. <br class="hide-for-medium-down">If that's not enough, I like running, biking and craft beer, sometimes in conjuction! No, I  am not willing to cut my mohawk blue, but I would die it blue if <span>Intel</span> hires me.
-		</p>
 		<p>
-		I operate a hosting platform, a software company, a game development community and a competitive gaming league. For years I've curated and automated my projects to the point of being self-sufficient, thus promoting my pursuit of future endeavors.
-		</p>-->
-		<p>
-		I operate my own servers, two gaming social networks, and still manage to quickly generate new sites. I've automated my projects to allow my pursuit of future endeavors. I am an extraordinary problem solver, primarily as a developer, with an eye for design.
+		I am a proficient developer with an eyes for design and over 15 years of experience. I am a problem solver, extremely passionate about evolving technology with an extrodinary aptitude for learning new skills. I manage my own servers and operations while quickly generating new sites. I have experience making fast, inexpensive sites, commerce and enterprise sites and apps. My broad experience with many tools and languages makes me an excellent candidate to specialize on your web applications.
 		</p>
 		<hr>
 
@@ -118,8 +112,30 @@
 		<% for(var slug in public.articles._data){ %>
 			<% if(public.articles._data[slug].publish !== true) { continue; } %>
 			<% if(public.articles._data[slug].tags.indexOf("blog") === -1) { continue; } %>
-			
-            <h4><%= public.articles._data[slug].title %></h4>		         
+
+			<div class="row blog_header">
+				<div class="small-8 columns">
+					<h5><a href="/articles/<%= slug %>">
+							<%= public.articles._data[slug].title %>
+					</a></h5>
+				</div>
+				<div class="small-4 columns text-right">
+					<small><%= public.articles._data[slug].date %></small>
+				</div>
+			</div>
+
+			<div class="row blog_header">
+				<div class="small-8 columns">
+					<p>
+						<%= public.articles._data[slug].intro %>
+					</p>
+				</div>
+
+				<div class="small-4 columns text-right">
+					<a href="/articles/<%= slug %>" class="button small secondary right">Read <i class="fa fa-book"></i> more</a>
+				</div>
+			</div>
+
 		<% }; %>
 		
 	</div>

@@ -35,12 +35,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="http://steamcommunity.com/id/artificialex" target="_blank">
-							<i class="fa fa-steam fa-2x fa-spin"></i>
-						</a>
-					</li>
-					<li>
-						<a href="https://www.linkedin.com/profile/view?id=104963465&trk=nav_responsive_tab_profile" target="_blank">
+						<a href="https://www.linkedin.com/in/awc737" target="_blank">
 							<i class="fa fa-linkedin fa-2x"></i>
 						</a>
 					</li>
@@ -60,38 +55,10 @@
 
 				<ul class="right mobile_contact_icons show-for-small">
 					<div class="icon-bar five-up">
-						<a href="#" class="item"><i class="fa fa-twitter fa-2x"></i></a>
-						<a href="#" class="item"><i class="fa fa-github fa-2x"></i></a>
-						<a href="#" class="item"><i class="fa fa-steam fa-2x fa-spin"></i></a>
-						<a href="#" class="item"><i class="fa fa-linkedin fa-2x"></i></a>
-						<a href="#" class="item"><i class="fa fa-facebook fa-2x"></i></a>
+						<a href="http://twitter.com/awc737" class="item"><i class="fa fa-twitter fa-2x"></i></a>
+						<a href="https://github.com/awc737" class="item"><i class="fa fa-github fa-2x"></i></a>
+						<a href="https://www.linkedin.com/in/awc737" class="item"><i class="fa fa-linkedin fa-2x"></i></a>
 					</div>
-					<!-- That was ugly.
-					<form>
-						<div class="row">
-						<br>
-							<div class="large-12 columns">
-								<textarea placeholder="Message"></textarea>
-							</div>
-						</div>
-						<div class="row">
-							<div class="small-8 columns">
-								<div class="row">
-									<div class="small-2 columns">
-										<span class="label">From:</span>
-									</div>
-									<div class="small-10 columns">
-										<input type="text" id="right-label" placeholder="Email address">
-									</div>
-								</div>
-							</div>
-							<div class="small-4 columns">
-								<button class="button expand success"><i class="fa fa-send-o"></i> Contact Me!</button>
-							</div>
-						</div>
-					</form>
-					<hr>
-					-->
 				</ul>
 
 			</section>
@@ -107,7 +74,7 @@
 <li>@package     com_jw_findstore</li>
 <li>@copyright   JELD-WEN © Copyright 2012. All Rights Reserved.</li>
 <li>@license     GNU General Public License version 2 or later; see LICENSE.txt</li>
-<li>@author      Alex Crawford <a href="&#109;&#x61;&#105;&#108;&#116;&#x6f;&#x3a;&#x61;&#108;&#x65;&#x78;&#x63;&#64;&#106;&#101;&#x6c;&#x64;&#x2d;&#x77;&#101;&#110;&#46;&#x63;&#x6f;&#109;">&#x61;&#108;&#x65;&#x78;&#x63;&#64;&#106;&#101;&#x6c;&#x64;&#x2d;&#x77;&#101;&#110;&#46;&#x63;&#x6f;&#109;</a> - JELD-WEN <a href="http://jeld-wen.com">http://jeld-wen.com</a>
+<li>@author      Alex Crawford <a href="&#x6d;&#x61;&#x69;&#108;&#116;&#x6f;&#58;&#x61;&#108;&#101;&#120;&#x63;&#x40;&#106;&#101;&#x6c;&#x64;&#45;&#119;&#101;&#x6e;&#46;&#x63;&#111;&#109;">&#x61;&#108;&#101;&#120;&#x63;&#x40;&#106;&#101;&#x6c;&#x64;&#45;&#119;&#101;&#x6e;&#46;&#x63;&#111;&#109;</a> - JELD-WEN <a href="http://jeld-wen.com">http://jeld-wen.com</a>
 */</li>
 </ul>
 <p>header(&#39;Content-Type: application/json&#39;);
@@ -421,10 +388,10 @@ public function debug() {
 		<div id="footer">
 			<div class="row">
 				<div id="built_with_title" class="medium-8 columns text-right hide-for-small">
-					This site is proudly built using:
+					This site is built with:
 				</div>
 				<div id="built_with_title_small" class="large-12 columns text-right show-for-small">
-					This site is proudly built using:
+					This site is built with:
 				</div>
 				<div id="built_with" class="medium-4 columns pull-right">
 					<div class="icon-bar four-up">

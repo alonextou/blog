@@ -35,12 +35,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="http://steamcommunity.com/id/artificialex" target="_blank">
-							<i class="fa fa-steam fa-2x fa-spin"></i>
-						</a>
-					</li>
-					<li>
-						<a href="https://www.linkedin.com/profile/view?id=104963465&trk=nav_responsive_tab_profile" target="_blank">
+						<a href="https://www.linkedin.com/in/awc737" target="_blank">
 							<i class="fa fa-linkedin fa-2x"></i>
 						</a>
 					</li>
@@ -60,38 +55,10 @@
 
 				<ul class="right mobile_contact_icons show-for-small">
 					<div class="icon-bar five-up">
-						<a href="#" class="item"><i class="fa fa-twitter fa-2x"></i></a>
-						<a href="#" class="item"><i class="fa fa-github fa-2x"></i></a>
-						<a href="#" class="item"><i class="fa fa-steam fa-2x fa-spin"></i></a>
-						<a href="#" class="item"><i class="fa fa-linkedin fa-2x"></i></a>
-						<a href="#" class="item"><i class="fa fa-facebook fa-2x"></i></a>
+						<a href="http://twitter.com/awc737" class="item"><i class="fa fa-twitter fa-2x"></i></a>
+						<a href="https://github.com/awc737" class="item"><i class="fa fa-github fa-2x"></i></a>
+						<a href="https://www.linkedin.com/in/awc737" class="item"><i class="fa fa-linkedin fa-2x"></i></a>
 					</div>
-					<!-- That was ugly.
-					<form>
-						<div class="row">
-						<br>
-							<div class="large-12 columns">
-								<textarea placeholder="Message"></textarea>
-							</div>
-						</div>
-						<div class="row">
-							<div class="small-8 columns">
-								<div class="row">
-									<div class="small-2 columns">
-										<span class="label">From:</span>
-									</div>
-									<div class="small-10 columns">
-										<input type="text" id="right-label" placeholder="Email address">
-									</div>
-								</div>
-							</div>
-							<div class="small-4 columns">
-								<button class="button expand success"><i class="fa fa-send-o"></i> Contact Me!</button>
-							</div>
-						</div>
-					</form>
-					<hr>
-					-->
 				</ul>
 
 			</section>
@@ -248,10 +215,10 @@ public function getOrderStep($response) {
 		<div id="footer">
 			<div class="row">
 				<div id="built_with_title" class="medium-8 columns text-right hide-for-small">
-					This site is proudly built using:
+					This site is built with:
 				</div>
 				<div id="built_with_title_small" class="large-12 columns text-right show-for-small">
-					This site is proudly built using:
+					This site is built with:
 				</div>
 				<div id="built_with" class="medium-4 columns pull-right">
 					<div class="icon-bar four-up">
