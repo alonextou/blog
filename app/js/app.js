@@ -6,12 +6,12 @@ $(document).ready(function(){
 		dots: true,
 		slidesToShow: 3,
 		autoplay: true,
-		autoplaySpeed: 1700
+		autoplaySpeed: 1500
 	});
 	$('#who_i_am_slider').slick({
 		arrows: false,
 		autoplay: true,
-		autoplaySpeed: 1700,
+		autoplaySpeed: 2000,
 		fade: false
 	});
 });

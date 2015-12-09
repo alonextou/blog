@@ -57,7 +57,7 @@
 		"publish": true,
 		"date": "March 28, 2011 - 2015",
 		"category": "projects",
-		"intro": "Automated provisioning and billing for cPanel shared hosting, and virtual servers with dedicated resources.",
+		"intro": "I used SolusVM and WHM to automatically provision and bill clients for cPanel shared hosting and KVM virtual servers, at extremely competitive rates. (Retired)",
 		"image": "/assets/img/projects/cagehost.png",
 		"tags": [
 			"projects"
@@ -92,17 +92,6 @@
 			}
 		]
 	},
-	"fbignite": {
-		"title": "Facebook Ignite",
-		"publish": true,
-		"date": "December 06, 2011",
-		"category": "projects",
-		"intro": "Design UI and develop protoype for Facebook open source development training courses.",
-		"image": "/assets/img/projects/fbignite.png",
-		"tags": [
-			"projects"
-		]
-	},
 	"acelogin": {
 		"title": "Ace Login / Register",
 		"publish": true,
@@ -110,6 +99,17 @@
 		"category": "projects",
 		"intro": "Ace Login Register combines the native login and registration functionality of Joomla into one slick module!",
 		"image": "/assets/img/projects/acelogin.jpg",
+		"tags": [
+			"projects"
+		]
+	},
+	"fbignite": {
+		"title": "Facebook Ignite",
+		"publish": true,
+		"date": "December 06, 2011",
+		"category": "projects",
+		"intro": "Design UI and develop protoype for Facebook open source development training courses.",
+		"image": "/assets/img/projects/fbignite.png",
 		"tags": [
 			"projects"
 		]
