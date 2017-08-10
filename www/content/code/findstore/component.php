@@ -74,7 +74,7 @@
 <li>@package     com_jw_findstore</li>
 <li>@copyright   JELD-WEN © Copyright 2012. All Rights Reserved.</li>
 <li>@license     GNU General Public License version 2 or later; see LICENSE.txt</li>
-<li>@author      Alex Crawford <a href="&#x6d;&#x61;&#x69;&#x6c;&#116;&#x6f;&#58;&#97;&#x6c;&#101;&#120;&#x63;&#64;&#106;&#x65;&#108;&#x64;&#x2d;&#119;&#x65;&#x6e;&#x2e;&#99;&#111;&#x6d;">&#97;&#x6c;&#101;&#120;&#x63;&#64;&#106;&#x65;&#108;&#x64;&#x2d;&#119;&#x65;&#x6e;&#x2e;&#99;&#111;&#x6d;</a> - JELD-WEN <a href="http://jeld-wen.com">http://jeld-wen.com</a>
+<li>@author      Alex Crawford <a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#x6f;&#58;&#x61;&#x6c;&#101;&#x78;&#x63;&#64;&#106;&#x65;&#x6c;&#100;&#x2d;&#x77;&#x65;&#x6e;&#46;&#99;&#x6f;&#x6d;">&#x61;&#x6c;&#101;&#x78;&#x63;&#64;&#106;&#x65;&#x6c;&#100;&#x2d;&#x77;&#x65;&#x6e;&#46;&#99;&#x6f;&#x6d;</a> - JELD-WEN <a href="http://jeld-wen.com">http://jeld-wen.com</a>
 */</li>
 </ul>
 <p>header(&#39;Content-Type: application/json&#39;);
