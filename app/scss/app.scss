@@ -21,6 +21,12 @@ body{
 }
 
 #home_header{
+	position: relative;
+	top: -20px;
+	padding: 15px 0 10px 0;
+	background: $primary-color;
+	color: #222;
+	border-bottom: 2px solid #222;
 }
 
 #topnav a{
@@ -29,8 +35,9 @@ body{
 }
 
 #topnav h1 a{
-	text-shadow: 1px 1px 1px #000;
-	color: #ff3737;
+	color: $primary-color;
+	font-size: 120%;
+	letter-spacing: 2px;
 }
 
 #topnav .contact_icons a{
@@ -39,6 +46,23 @@ body{
 
 #topnav .contact_icons a i.fa{
 	line-height: 45px;
+}
+
+#topnav .contact_icons a i.fa-twitter{
+	color: #90CAF9;
+}
+
+#topnav .contact_icons a i.fa-github{
+	color: #fff;
+}
+
+#topnav .contact_icons a i.fa-linkedin{
+	color: #2979FF;
+}
+
+
+#topnav .contact_icons a:hover{
+	color: #fff;
 }
 
 #topnav .mobile_contact_icons{
@@ -50,20 +74,38 @@ body{
 }
 
 #home_header img{
-	max-height: 140px;
+	max-height: 120px;
+	border-radius: 50%;
+	box-shadow: 0 0 1px 1px #000;
+}
+
+#home_header h5 {
+	font-size: 105%;
+	font-weight: bold;
+	color: #fff;
+	letter-spacing: 2px;
+	margin-bottom: 10px;
 }
 
 #home_header a{
+	color: #fff;
+	letter-spacing: 1px;
 	font-weight: bold;
-	color: #ff0000;
 }
 
 #home_header a:hover{
 	color: #222;
+	background: none;
 }
 
 #home_header .side-nav li a{
+	text-align: right;
 	padding: 2px;
+}
+
+#home_header p {
+	font-size: 90%;
+	font-weight: bold;
 }
 
 p{
@@ -72,12 +114,13 @@ p{
 
 h3.header{
 	background: #222;
-	color: #fff;
+	color: $primary-color;
 	padding-left: 10px;
-	letter-spacing: 1px;
+	letter-spacing: 2px;
 	font-size: 16px;
 	font-weight: bold;
 	line-height: 28px;
+	border-bottom: 2px solid #EF5350;
 }
 
 .blog_header{
@@ -144,7 +187,9 @@ small{
 	min-width: 40px;
 }
 
-/* thing */
+#what-i-do {
+	background: none;
+}
 
 .grid {
     max-width: 1300px;
@@ -215,4 +260,14 @@ small{
 .no-touch .cs-style-6 .figure:hover img,
 .cs-style-6 .figure.cs-hover img {
     transform: translateY(-20px) scale(0.7);
+}
+
+.slick-prev {
+	top: 15px;
+	left: 0;
+}
+
+.slick-next {
+	top: 15px;
+	right: 0;
 }
