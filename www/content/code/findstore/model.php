@@ -1,6 +1,7 @@
 <!doctype html>
 <html class="no-js" lang="en">
 	<head>
+		<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Alex Crawford</title>
@@ -65,7 +66,7 @@
 		</nav>
 
 		<div id="page">
-			
+
 			
 				<p>&lt;?php</p>
 <p>defined(&#39;_JEXEC&#39;) or die(&#39;Restricted access&#39;);

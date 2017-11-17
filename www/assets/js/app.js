@@ -2,20 +2,16 @@ $(document).foundation();
 
 $(document).ready(function(){
 	$('#recent_projects_slider').slick({
-		arrows: false,
+		arrows: true,
 		dots: true,
 		slidesToShow: 3,
 		autoplay: true,
-		autoplaySpeed: 2000
+		autoplaySpeed: 1500
 	});
 	$('#who_i_am_slider').slick({
 		arrows: false,
 		autoplay: true,
-		autoplaySpeed: 1500,
-		fade: true,
-		vertical: false
+		autoplaySpeed: 2000,
+		fade: false
 	});
-	$(document.links).filter(function() {
-    	return this.hostname != window.location.hostname;
-	}).attr('target', '_blank');
 });

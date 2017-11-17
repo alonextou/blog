@@ -26,7 +26,7 @@ body{
 	padding: 15px 0 10px 0;
 	background: $primary-color;
 	color: #222;
-	border-bottom: 2px solid #222;
+	border-bottom: 3px solid #222;
 }
 
 #topnav a{
@@ -49,19 +49,19 @@ body{
 }
 
 #topnav .contact_icons a i.fa-twitter{
-	color: #90CAF9;
+	color: #64B5F6;
 }
 
 #topnav .contact_icons a i.fa-github{
-	color: #fff;
+	color: #999;
 }
 
 #topnav .contact_icons a i.fa-linkedin{
-	color: #2979FF;
+	color: #0D47A1;
 }
 
 
-#topnav .contact_icons a:hover{
+#topnav .contact_icons a:hover i{
 	color: #fff;
 }
 
@@ -75,16 +75,17 @@ body{
 
 #home_header img{
 	max-height: 120px;
-	border-radius: 50%;
-	box-shadow: 0 0 1px 1px #000;
+	// border-radius: 50%;
+	box-shadow: 0 0 1px 2px #222;
 }
 
 #home_header h5 {
-	font-size: 105%;
+	font-size: 120%;
 	font-weight: bold;
 	color: #fff;
 	letter-spacing: 2px;
 	margin-bottom: 10px;
+	text-shadow: 1px 1px 2px #000;
 }
 
 #home_header a{
@@ -96,6 +97,7 @@ body{
 #home_header a:hover{
 	color: #222;
 	background: none;
+	text-shadow: none;
 }
 
 #home_header .side-nav li a{
@@ -103,9 +105,14 @@ body{
 	padding: 2px;
 }
 
+#home_header .side-nav li i{
+	margin-left: 10px;
+}
+
 #home_header p {
 	font-size: 90%;
 	font-weight: bold;
+	color: #000;
 }
 
 p{
@@ -117,7 +124,7 @@ h3.header{
 	color: $primary-color;
 	padding-left: 10px;
 	letter-spacing: 2px;
-	font-size: 16px;
+	font-size: 95%;
 	font-weight: bold;
 	line-height: 28px;
 	border-bottom: 2px solid #EF5350;
@@ -270,4 +277,44 @@ small{
 .slick-next {
 	top: 15px;
 	right: 0;
+}
+
+.button.secondary {
+	background: $primary-color;
+	font-size: 80%;
+	letter-spacing: 1px;
+	border: 2px solid #222;
+}
+
+.button.secondary {
+	background: $primary-color;
+	font-size: 80%;
+	letter-spacing: 1px;
+	border: 2px solid #222;
+	color: #fff;
+}
+
+.button.secondary:hover {
+	color: #222;
+	border-color: darken($primary-color, 70%);
+	background: lighten($primary-color, 10%);
+}
+
+.button.secondary i {
+	margin-right: 5px;
+}
+
+.breadcrumbs {
+	background: $primary-color;
+	border: 1px solid #222;
+	border-radius: 0;
+	font-weight: bold;
+}
+
+.breadcrumbs>*:before {
+	color: #333;
+}
+
+.breadcrumbs a {
+	color: #fff;
 }

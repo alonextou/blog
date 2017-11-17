@@ -1,6 +1,7 @@
 <!doctype html>
 <html class="no-js" lang="en">
 	<head>
+		<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Alex Crawford</title>
@@ -65,7 +66,7 @@
 		</nav>
 
 		<div id="page">
-			
+
 			
 				<p>&lt;?php</p>
 <p>/**</p>
@@ -74,7 +75,7 @@
 <li>@package     com_jw_findstore</li>
 <li>@copyright   JELD-WEN © Copyright 2012. All Rights Reserved.</li>
 <li>@license     GNU General Public License version 2 or later; see LICENSE.txt</li>
-<li>@author      Alex Crawford <a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#x6f;&#58;&#x61;&#x6c;&#101;&#x78;&#x63;&#64;&#106;&#x65;&#x6c;&#100;&#x2d;&#x77;&#x65;&#x6e;&#46;&#99;&#x6f;&#x6d;">&#x61;&#x6c;&#101;&#x78;&#x63;&#64;&#106;&#x65;&#x6c;&#100;&#x2d;&#x77;&#x65;&#x6e;&#46;&#99;&#x6f;&#x6d;</a> - JELD-WEN <a href="http://jeld-wen.com">http://jeld-wen.com</a>
+<li>@author      Alex Crawford <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#x3a;&#x61;&#108;&#x65;&#x78;&#99;&#64;&#106;&#x65;&#x6c;&#x64;&#x2d;&#x77;&#101;&#x6e;&#x2e;&#x63;&#111;&#x6d;">&#x61;&#108;&#x65;&#x78;&#99;&#64;&#106;&#x65;&#x6c;&#x64;&#x2d;&#x77;&#101;&#x6e;&#x2e;&#x63;&#111;&#x6d;</a> - JELD-WEN <a href="http://jeld-wen.com">http://jeld-wen.com</a>
 */</li>
 </ul>
 <p>header(&#39;Content-Type: application/json&#39;);

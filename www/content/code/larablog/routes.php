@@ -1,6 +1,7 @@
 <!doctype html>
 <html class="no-js" lang="en">
 	<head>
+		<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Alex Crawford</title>
@@ -65,7 +66,7 @@
 		</nav>
 
 		<div id="page">
-			
+
 			
 				<p>&lt;?php</p>
 <p>Route::group([&#39;before&#39; =&gt; &#39;auth&#39;], function(){
