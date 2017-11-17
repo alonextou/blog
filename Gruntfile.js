@@ -26,16 +26,21 @@ module.exports = function(grunt) {
         },
         files: {
           'public/assets/css/app.css': 'app/scss/app.scss'
-        }        
+        }
       }
     },
 
     watch: {
       grunt: { files: ['Gruntfile.js'] },
 
-      sass: {                  
+      sass: {
         files: 'app/scss/**/*.scss',
         tasks: ['sass']
+      },
+
+      js: {
+        files: 'app/js/**/*.js',
+        tasks: ['copy']
       }
     },
 
@@ -60,5 +65,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('shipit-deploy');
 
   grunt.registerTask('build', ['sass']);
-  grunt.registerTask('default', ['build','watch']);
+  grunt.registerTask('default', ['build', 'watch']);
 }

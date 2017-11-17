@@ -1,6 +1,0 @@
-{
-  "user": "awc737",
-  "workspace": "/local/build/dir",
-  "deployTo": "/remote/dir",
-  "production": "hostname"
-}
